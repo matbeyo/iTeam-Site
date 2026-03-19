@@ -21,10 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
 
     if (mobileMenuBtn) {
+        const header = document.querySelector('.header');
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             // Toggle hamburger animation
             this.classList.toggle('active');
+            // Toggle header solid background when menu is open
+            header.classList.toggle('menu-open');
             // Update ARIA expanded state
             var isExpanded = navLinks.classList.contains('active');
             this.setAttribute('aria-expanded', isExpanded);
@@ -39,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.remove('active');
             mobileMenuBtn.classList.remove('active');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.querySelector('.header').classList.remove('menu-open');
         });
     });
 
@@ -77,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                document.querySelector('.header').classList.remove('menu-open');
                 mobileMenuBtn.focus();
             }
         });
@@ -436,13 +441,13 @@ document.addEventListener('DOMContentLoaded', function() {
 const style = document.createElement('style');
 style.textContent = `
     .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(5px, 6px);
     }
     .mobile-menu-btn.active span:nth-child(2) {
         opacity: 0;
     }
     .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(5px, -6px);
     }
 `;
 document.head.appendChild(style);

@@ -141,6 +141,11 @@
         backdrop-filter: blur(12px);
         border-bottom-color: rgba(0, 31, 63, 0.1);
     }
+
+    [data-theme="light"] .header.menu-open {
+        background: rgba(248, 249, 250, 0.97);
+        backdrop-filter: blur(12px);
+    }
 }
 
 /* Light theme: hero */
@@ -958,6 +963,7 @@ ul {
     z-index: 1000;
     background: transparent;
     border-bottom: none;
+    transition: background 0.25s ease, backdrop-filter 0.25s ease;
 }
 
 .nav {
@@ -2361,7 +2367,7 @@ ul {
 
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 60px;
         right: 0;
         left: 0;
         background: rgba(248, 249, 250, 0.97);
