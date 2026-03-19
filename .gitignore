@@ -1,0 +1,7 @@
+# Claude
+.claude/
+CLAUDE.md
+*.claude*
+
+# VS Code
+.vscode/

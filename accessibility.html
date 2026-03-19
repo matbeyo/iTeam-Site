@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Theme: always force light mode -->
+    <script>
+        (function() {
+            document.documentElement.setAttribute('data-theme', 'light');
+        })();
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <title>הצהרת נגישות | iTeam-sh</title>
+    <meta name="description" content="הצהרת נגישות של אתר iTeam-sh. מחויבים לנגישות דיגיטלית בהתאם לתקן ישראלי 5568 ו-WCAG 2.1 AA.">
+    <meta name="author" content="iTeam-sh">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.iteam-sh.co.il/accessibility.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.iteam-sh.co.il/accessibility.html">
+    <meta property="og:title" content="הצהרת נגישות | iTeam-sh">
+    <meta property="og:description" content="הצהרת נגישות של אתר iTeam-sh. מחויבים לנגישות דיגיטלית בהתאם לתקן ישראלי 5568.">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:site_name" content="iTeam-sh">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "הצהרת נגישות",
+        "description": "הצהרת נגישות של אתר iTeam-sh בהתאם לתקן ישראלי 5568",
+        "url": "https://www.iteam-sh.co.il/accessibility.html",
+        "inLanguage": "he",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "iTeam-sh",
+            "url": "https://www.iteam-sh.co.il/"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "דף הבית",
+                    "item": "https://www.iteam-sh.co.il/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "הצהרת נגישות"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Reveal page once styles are ready -->
+    <script>
+        (function() {
+            function show() { document.body.style.opacity = '1'; }
+            if (document.querySelector('link[rel="stylesheet"][href="styles.css"]')) show();
+            else {
+                var observer = new MutationObserver(function() {
+                    if (document.querySelector('link[rel="stylesheet"][href="styles.css"]')) { show(); observer.disconnect(); }
+                });
+                observer.observe(document.head, { childList: true, subtree: true });
+                setTimeout(show, 1500);
+            }
+        })();
+    </script>
+
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="skip-to-content">דלג לתוכן הראשי</a>
+
+    <!-- Theme Toggle (disabled — light mode only)
+    <button class="theme-toggle" id="themeToggle" aria-label="החלף ערכת נושא">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+    -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav" aria-label="ניווט ראשי">
+                <a href="index.html" class="logo" aria-label="iTeam-sh - חזרה לדף הבית">
+                    <img src="images/iteam-logo.png" alt="iTeam-sh לוגו" class="logo-img">
+                </a>
+                <ul class="nav-links" id="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="index.html#services" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">שירותים</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/it-consulting.html">ייעוץ IT לעסקים</a></li>
+                            <li><a href="services/infrastructure-projects.html">הקמה ושדרוג מערכות</a></li>
+                            <li><a href="services/it-management-support.html">ניהול ותמיכה במחשוב</a></li>
+                            <li><a href="services/it-optimization.html">אופטימיזציה של מערכות IT</a></li>
+                            <li><a href="services/cloud-services.html">שירותי ענן לעסקים</a></li>
+                            <li><a href="services/cyber-security.html">פתרונות אבטחת מידע</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">אודות</a></li>
+                    <li><a href="tel:072-2504001" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 072-2504001</a></li>
+                    <li><a href="index.html#contact" class="btn btn-nav">צור קשר</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="accessibility-hero" aria-labelledby="page-title">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="מיקום בניווט">
+                    <a href="index.html">דף הבית</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&larr;</span>
+                    <span class="breadcrumb-current" aria-current="page">הצהרת נגישות</span>
+                </nav>
+                <h1 id="page-title">הצהרת נגישות</h1>
+            </div>
+        </section>
+
+        <!-- Accessibility Statement Content -->
+        <section class="accessibility-statement" aria-labelledby="statement-heading">
+            <div class="container">
+                <article>
+                    <h2 id="statement-heading">כללי</h2>
+                    <p>
+                        חברת iTeam-sh מחויבת להנגשת האתר שלה עבור אנשים עם מוגבלויות.
+                        התאמות הנגישות בוצעו בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, תשנ"ח-1998,
+                        תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), תשע"ג-2013,
+                        והמלצות התקן הישראלי (ת"י 5568) ברמת AA, המבוסס על הנחיות WCAG 2.1.
+                    </p>
+
+                    <h2>רמת ציות</h2>
+                    <p>
+                        אתר זה עומד ברמת תאימות AA של תקן WCAG 2.1,
+                        בהתאם לדרישות התקן הישראלי 5568.
+                    </p>
+
+                    <h2>תכונות הנגישות המיושמות באתר</h2>
+                    <p>באתר יושמו התאמות הנגישות הבאות:</p>
+                    <ul>
+                        <li><strong>ניווט במקלדת:</strong> ניתן לנווט בכל האתר באמצעות המקלדת בלבד, כולל תפריטים נפתחים ותמיכה במקשי Tab, Enter, Space ו-Escape.</li>
+                        <li><strong>קישור דילוג לתוכן:</strong> בכל דפי האתר קיים קישור &quot;דלג לתוכן הראשי&quot; המאפשר מעבר מהיר לתוכן העיקרי.</li>
+                        <li><strong>מבנה סמנטי:</strong> האתר בנוי עם תגיות HTML סמנטיות (header, nav, main, footer, section) המאפשרות ניווט יעיל עם קוראי מסך.</li>
+                        <li><strong>תוויות ARIA:</strong> כל האלמנטים האינטראקטיביים מתויגים באמצעות תכונות ARIA מתאימות (aria-label, aria-expanded, aria-haspopup, aria-labelledby).</li>
+                        <li><strong>טקסט חלופי:</strong> לכל התמונות באתר מוגדר טקסט חלופי (alt text) המתאר את תוכן התמונה.</li>
+                        <li><strong>ניגודיות צבעים:</strong> האתר עומד בדרישות ניגודיות הצבעים ברמת AA. בנוסף, קיימת אפשרות מעבר בין ערכת נושא כהה ובהירה.</li>
+                        <li><strong>סימון מיקוד (Focus):</strong> כל האלמנטים האינטראקטיביים (כפתורים, קישורים, שדות טופס) מסומנים בבירור בעת מיקוד באמצעות מקלדת.</li>
+                        <li><strong>תמיכה בקוראי מסך:</strong> האתר תומך בקוראי מסך כגון JAWS, NVDA ו-VoiceOver, כולל תוויות מתאימות לכל האלמנטים.</li>
+                        <li><strong>טפסים נגישים:</strong> כל שדות הטופס מקושרים לתוויות (labels) מתאימות, עם הודעות שגיאה נגישות (role=&quot;alert&quot;) ותיקוף בזמן אמת.</li>
+                        <li><strong>ניווט פירורי לחם:</strong> בדפי השירותים קיים ניווט פירורי לחם (breadcrumb) המאפשר הבנת המיקום בהיררכיית האתר.</li>
+                        <li><strong>כיבוד העדפות משתמש:</strong> האתר מכבד את הגדרת prefers-reduced-motion ומבטל אנימציות עבור משתמשים שהגדירו העדפה לצמצום תנועה.</li>
+                        <li><strong>תמיכה במצב ניגודיות גבוהה:</strong> האתר תומך במצב ניגודיות גבוהה של Windows (forced-colors) להבטחת קריאות מיטבית.</li>
+                    </ul>
+
+                    <h2>כלי הנגישות</h2>
+                    <p>
+                        באתר מובנה כלי נגישות מותאם, המופיע ככפתור צף בצד שמאל למטה של המסך.
+                        הכלי מאפשר התאמות כגון:
+                    </p>
+                    <ul>
+                        <li>הגדלה והקטנה של גודל הגופן</li>
+                        <li>מצב ניגודיות גבוהה וצבעים הפוכים</li>
+                        <li>הדגשת קישורים</li>
+                        <li>הגדלת סמן העכבר</li>
+                        <li>עצירת אנימציות</li>
+                        <li>הגדלת ריווח שורות ואותיות</li>
+                        <li>החלפה לפונט קריא</li>
+                    </ul>
+                    <p>
+                        כל ההגדרות נשמרות באופן אוטומטי ויישמרו בביקורים הבאים שלכם באתר.
+                        לפתיחת כלי הנגישות, לחצו על כפתור הנגישות (♿) בצד שמאל למטה של המסך.
+                    </p>
+
+                    <h2>מגבלות נגישות ידועות</h2>
+                    <p>
+                        אנו עושים מאמצים מתמשכים לשפר את נגישות האתר.
+                        להלן מגבלות ידועות:
+                    </p>
+                    <ul>
+                        <li>תכנים של צדדים שלישיים (כגון סרטוני וידאו חיצוניים) עשויים שלא לעמוד במלואם בדרישות הנגישות.</li>
+                        <li>חלק מהעמודים עשויים להכיל תוכן שנוסף לאחרונה ועדיין לא הונגש במלואו.</li>
+                    </ul>
+                    <p>אנו פועלים באופן שוטף לאיתור ותיקון בעיות נגישות נוספות.</p>
+
+                    <h2>פניות בנושא נגישות</h2>
+                    <p>
+                        אם נתקלתם בבעיית נגישות באתר, או שיש לכם הצעות לשיפור הנגישות,
+                        אנא פנו אלינו ונטפל בפנייתכם בהקדם:
+                    </p>
+                    <div class="accessibility-contact-info">
+                        <p><strong>רכז נגישות:</strong> iTeam-sh</p>
+                        <p><strong>טלפון:</strong> <a href="tel:072-2504001">072-2504001</a></p>
+                        <p><strong>דוא"ל:</strong> <a href="mailto:iteam@iteam-sh.co.il">iteam@iteam-sh.co.il</a></p>
+                    </div>
+
+                    <h2>תאריך עדכון אחרון</h2>
+                    <p>הצהרת נגישות זו עודכנה לאחרונה בתאריך: מרץ 2026.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/iteam-logo.png" alt="iTeam-sh לוגו" class="logo-img">
+                    </a>
+                    <p class="footer-description">פתרונות IT מקצועיים לעסקים</p>
+                    <ul class="footer-details">
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            רעננה
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            א׳-ה׳ 09:00-18:00
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>השירותים שלנו</h4>
+                    <ul>
+                        <li><a href="services/it-consulting.html">ייעוץ IT</a></li>
+                        <li><a href="services/cloud-services.html">שירותי ענן</a></li>
+                        <li><a href="services/cyber-security.html">אבטחת מידע</a></li>
+                        <li><a href="services/it-management-support.html">תמיכה טכנית</a></li>
+                        <li><a href="services/infrastructure-projects.html">הקמה ושדרוג מערכות</a></li>
+                        <li><a href="services/it-optimization.html">אופטימיזציה</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>צרו קשר</h4>
+                    <p>072-2504001</p>
+                    <p>iteam@iteam-sh.co.il</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 iTeam-sh. כל הזכויות שמורות. | <a href="accessibility.html" class="footer-accessibility-link">הצהרת נגישות</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="חזרה למעלה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>
