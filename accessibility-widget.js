@@ -328,7 +328,7 @@
 
     // Determine the accessibility page path
     var isServicePage = window.location.pathname.indexOf('/services/') !== -1;
-    var a11yPageHref = isServicePage ? '../accessibility.html' : 'accessibility.html';
+    var a11yPageHref = isServicePage ? '../../accessibility.html' : 'accessibility.html';
 
     // Build DOM
     // Floating button
