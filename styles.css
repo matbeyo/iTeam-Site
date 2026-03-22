@@ -1906,7 +1906,7 @@ ul {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
@@ -1999,12 +1999,6 @@ ul {
 @media (min-width: 769px) and (max-width: 1024px) {
     .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .testimonial-card:last-child {
-        grid-column: 1 / -1;
-        max-width: 50%;
-        justify-self: center;
     }
 }
 
