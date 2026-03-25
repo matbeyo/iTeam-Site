@@ -36,22 +36,22 @@
     css.textContent = [
         /* Floating button */
         '.a11y-fab{',
-            'position:fixed;top:24px;left:24px;z-index:100000;',
-            'width:64px;height:64px;border-radius:50%;border:none;',
+            'position:fixed;top:50%;left:24px;transform:translateY(-50%);z-index:100000;',
+            'width:54px;height:54px;border-radius:50%;border:none;',
             'background:#0065BF;color:#fff;cursor:pointer;',
             'box-shadow:0 4px 16px rgba(0,0,0,0.3);',
             'display:flex;align-items:center;justify-content:center;',
             'transition:transform 0.2s,box-shadow 0.2s;',
         '}',
         '.a11y-fab:hover,.a11y-fab:focus-visible{',
-            'transform:scale(1.08);box-shadow:0 6px 24px rgba(0,0,0,0.4);',
+            'transform:translateY(-50%) scale(1.08);box-shadow:0 6px 24px rgba(0,0,0,0.4);',
         '}',
         '.a11y-fab:focus-visible{outline:3px solid #fff;outline-offset:3px;}',
-        '.a11y-fab svg{width:32px;height:32px;fill:currentColor;}',
+        '.a11y-fab svg{width:27px;height:27px;fill:currentColor;}',
 
         /* Panel */
         '.a11y-panel{',
-            'position:fixed;top:100px;left:24px;z-index:100001;',
+            'position:fixed;top:50%;left:24px;margin-top:40px;z-index:100001;',
             'width:320px;max-height:80vh;overflow-y:auto;',
             'background:#1a2332;color:#fff;border-radius:16px;',
             'box-shadow:0 10px 40px rgba(0,0,0,0.5);',
@@ -166,6 +166,9 @@
         '.a11y-no-animations .partners-track,',
         '.a11y-no-animations .customers-track{',
             'animation:none !important;',
+        '}',
+        '.a11y-no-animations .testimonial-card{',
+            'transition:none !important;',
         '}',
         '.a11y-no-animations .animate-fade-in-up{',
             'animation:none !important;',
@@ -306,8 +309,8 @@
 
         /* Responsive */
         '@media(max-width:400px){',
-            '.a11y-panel{left:8px;right:8px;width:auto;top:82px;}',
-            '.a11y-fab{left:16px;top:16px;width:58px;height:58px;}',
+            '.a11y-panel{left:8px;right:8px;width:auto;top:50%;margin-top:36px;}',
+            '.a11y-fab{left:16px;top:50%;transform:translateY(-50%);width:49px;height:49px;}',
         '}',
 
         /* Reduced motion */
@@ -550,6 +553,8 @@
         html.classList.toggle('a11y-no-animations', !prefs.animations);
         if (!prefs.animations) {
             revealHiddenElements();
+            // Stop testimonials auto-play
+            if (window._testimonialsStopAutoPlay) window._testimonialsStopAutoPlay();
         } else {
             restoreHiddenElements();
             // Reset marquee positions when re-enabling animations
