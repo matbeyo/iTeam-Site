@@ -12,6 +12,14 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- About Page -->
+    <url>
+        <loc>https://www.iteam-sh.co.il/about/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Accessibility Statement -->
     <url>
         <loc>https://www.iteam-sh.co.il/accessibility.html</loc>
