@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  NEW ARTICLE — you only edit the 5 spots marked  ✏️  below. Everything else
+  (canonical, social tags, structured data, breadcrumb, read-time, meta pill)
+  is generated automatically by article.js.
+
+  1. Copy this folder:   articles/_template/  →  articles/your-slug/
+  2. ✏️ <title>          the headline + " | iTeam-sh"
+  3. ✏️ <meta description> one sentence (≈155 chars)
+  4. ✏️ #article-config   category + date
+  5. ✏️ <h1> + lead       the on-page headline & intro
+  6. ✏️ the body          write your article (plain <p>, <h2>, <h3>, lists…)
+  Then add a card in articles/index.html and a line in sitemap.xml.
+  Rich blocks (quote, tip box, takeaways, Q&A…) are in articles/README.md.
+  ════════════════════════════════════════════════════════════════════════
+-->
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){document.documentElement.setAttribute('data-theme','light');document.documentElement.classList.add('js');})();</script>
+
+    <!-- ✏️ 1. Title (shown in the browser tab, search results & the page headline) -->
+    <title>כותרת המאמר | iTeam-sh</title>
+    <!-- ✏️ 2. Description (search results + link previews) -->
+    <meta name="description" content="משפט תיאור קצר של המאמר, עד כ-155 תווים.">
+
+    <!-- ✏️ 3. Article settings  (optionally add a byline — see the commented keys) -->
+    <script id="article-config" type="application/json">
+    { "category": "קטגוריה", "date": "2026-01-01" }
+    </script>
+    <!-- For a byline at the bottom, add to the config above:
+         "author": "שם הכותב", "authorTitle": "תפקיד", "authorImage": "/images/CEO/ronen.jpg" -->
+
+
+    <meta name="author" content="iTeam-sh">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="iTeam-sh">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:image" content="https://www.iteam-sh.co.il/images/iteam-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.iteam-sh.co.il/images/iteam-logo.png">
+
+    <link rel="icon" type="image/x-icon" href="../../images/fav.ico">
+    <link rel="icon" type="image/png" href="../../images/fav.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../article.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">דלג לתוכן הראשי</a>
+    <div id="blurry-filter" aria-hidden="true"></div>
+    <div class="reading-progress" aria-hidden="true"><span id="reading-bar"></span></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav" aria-label="ניווט ראשי">
+                <a href="/" class="logo" aria-label="iTeam-sh - חזרה לדף הבית">
+                    <img src="../../images/iteam-logo.png" alt="iTeam-sh לוגו" class="logo-img">
+                </a>
+                <ul class="nav-links" id="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="/#services" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">שירותים</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/services/it-consulting/">ייעוץ IT לעסקים</a></li>
+                            <li><a href="/services/infrastructure-projects/">הקמה ושדרוג מערכות</a></li>
+                            <li><a href="/services/it-management-support/">ניהול ותמיכה במחשוב</a></li>
+                            <li><a href="/services/it-optimization/">אופטימיזציה של מערכות IT</a></li>
+                            <li><a href="/services/cloud-services/">שירותי ענן לעסקים</a></li>
+                            <li><a href="/services/cyber-security/">פתרונות אבטחת מידע</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about/">אודות</a></li>
+                    <li><a href="/why-it/">למה IT?</a></li>
+                    <li><a href="/articles/">מאמרים</a></li>
+                    <li><a href="tel:072-2504001" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 072-2504001</a></li>
+                    <li><a href="/#contact" class="btn btn-nav">צור קשר</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <article>
+        <!-- Hero (badge, breadcrumb label, date/read-time pill are filled in automatically) -->
+        <header class="article-hero" aria-labelledby="article-title">
+            <div class="hero-grid" aria-hidden="true"></div>
+            <div class="hero-glow" aria-hidden="true"></div>
+            <canvas id="article-particles" class="hero-particles" aria-hidden="true"></canvas>
+            <div class="container">
+                <nav class="breadcrumb" aria-label="מיקום בניווט">
+                    <a href="/">דף הבית</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&larr;</span>
+                    <a href="/articles/">מאמרים</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&larr;</span>
+                    <span class="breadcrumb-current" aria-current="page"></span>
+                </nav>
+                <div class="article-hero-inner">
+                    <span class="article-badge"><span class="article-badge-dot" aria-hidden="true"></span><span class="badge-text"></span></span>
+                    <!-- ✏️ 5. Headline — wrap one key phrase in <span class="mark-accent">…</span> -->
+                    <h1 id="article-title">כותרת המאמר עם <span class="mark-accent">דגש צבעוני</span></h1>
+                    <!-- ✏️ intro sentence -->
+                    <p class="article-lead">פסקת פתיחה אחת שמסקרנת ומסבירה מה הקורא ירוויח.</p>
+                    <div class="article-meta"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Body -->
+        <div class="article-body-section">
+            <div class="container">
+                <div class="article-content">
+
+                    <!-- ✏️ 6. WRITE YOUR ARTICLE BELOW.
+                         Plain HTML is auto-styled: <p>, <h2>, <h3>, <ul>/<ol>, <a>, <strong>,
+                         <blockquote>. For special blocks (pull-quote, tip box, key-takeaways,
+                         Q&A card, figure, inline CTA) copy a snippet from articles/README.md. -->
+
+                    <p class="lead">פסקת פתיחה מודגשת (אופציונלי).</p>
+                    <p>גוף המאמר...</p>
+
+                    <h2>כותרת משנה</h2>
+                    <p>טקסט...</p>
+
+                    <!-- end of article -->
+                    <a href="/articles/" class="article-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        חזרה לכל המאמרים
+                    </a>
+                </div>
+            </div>
+        </div>
+        </article>
+
+        <!-- Closing CTA (same on every article — no need to edit) -->
+        <section class="article-cta" aria-labelledby="article-cta-heading">
+            <div class="container">
+                <div class="article-cta-content reveal">
+                    <h2 id="article-cta-heading">רוצים שהטכנולוגיה תעבוד <span class="accent">בשביל העסק שלכם</span>?</h2>
+                    <p>ייעוץ ראשוני ללא עלות וללא התחייבות.</p>
+                    <div class="article-cta-buttons">
+                        <a href="/#contact" class="btn btn-primary">קבל הצעת מחיר</a>
+                        <a href="tel:072-2504001" class="btn btn-secondary">התקשרו: 072-2504001</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="../../images/iteam-logo.png" alt="iTeam-sh לוגו" class="logo-img">
+                    </a>
+                    <p class="footer-company-name">אייתים מחשבים וטכנולוגיות מידע</p>
+                    <p>פתרונות IT מקצועיים לעסקים</p>
+                </div>
+                <div class="footer-links">
+                    <h4>מידע</h4>
+                    <ul>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            רעננה
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            א׳-ה׳ 09:00-18:00
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                            <a href="/why-it/">למה צריך IT?</a>
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <a href="/articles/">מאמרים</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>השירותים שלנו</h4>
+                    <ul>
+                        <li><a href="/services/it-consulting/">ייעוץ IT</a></li>
+                        <li><a href="/services/cloud-services/">שירותי ענן</a></li>
+                        <li><a href="/services/cyber-security/">אבטחת מידע</a></li>
+                        <li><a href="/services/it-management-support/">תמיכה טכנית</a></li>
+                        <li><a href="/services/infrastructure-projects/">הקמה ושדרוג מערכות</a></li>
+                        <li><a href="/services/it-optimization/">אופטימיזציה</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>צרו קשר</h4>
+                    <p><a href="tel:072-2504001">072-2504001</a></p>
+                    <p><a href="mailto:info@iteam-sh.co.il">info@iteam-sh.co.il</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 אייתים מחשבים וטכנולוגיות מידע. כל הזכויות שמורות. | <a href="/accessibility.html" class="footer-accessibility-link">הצהרת נגישות</a> | <a href="/privacy-policy/" class="footer-accessibility-link">מדיניות פרטיות</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="חזרה למעלה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="../../script.js"></script>
+    <script src="../../article.js"></script>
+    <script src="../../accessibility-widget.js"></script>
+</body>
+</html>

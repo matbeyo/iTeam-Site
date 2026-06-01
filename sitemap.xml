@@ -20,6 +20,14 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Why IT Article -->
+    <url>
+        <loc>https://www.iteam-sh.co.il/why-it/</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Accessibility Statement -->
     <url>
         <loc>https://www.iteam-sh.co.il/accessibility.html</loc>
@@ -69,6 +77,22 @@
         <lastmod>2026-02-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Articles Hub -->
+    <url>
+        <loc>https://www.iteam-sh.co.il/articles/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Articles -->
+    <url>
+        <loc>https://www.iteam-sh.co.il/articles/cloud-it-trends/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 
 </urlset>

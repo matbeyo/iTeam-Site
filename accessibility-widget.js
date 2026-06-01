@@ -329,9 +329,10 @@
     ].join('');
     document.head.appendChild(css);
 
-    // Determine the accessibility page path
-    var isServicePage = window.location.pathname.indexOf('/services/') !== -1;
-    var a11yPageHref = isServicePage ? '../../accessibility.html' : 'accessibility.html';
+    // Accessibility statement lives at the site root. Use a root-relative
+    // path so the link resolves from any page depth (root, /services/*,
+    // /articles/<slug>/, /about/, etc.).
+    var a11yPageHref = '/accessibility.html';
 
     // Build DOM
     // Floating button

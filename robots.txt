@@ -5,6 +5,9 @@
 User-agent: *
 Allow: /
 
+# Keep the article template out of search results (it is not linked anywhere)
+Disallow: /articles/_template/
+
 # Disallow admin or private directories (add as needed)
 # Disallow: /admin/
 # Disallow: /private/
