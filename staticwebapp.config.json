@@ -1,17 +1,12 @@
 {
   "routes": [
     {
-      "route": "/services/email-security-microsoft-365",
-      "redirect": "/products/email-security-microsoft-365/",
-      "statusCode": 301
-    },
-    {
       "route": "/services/email-security-microsoft-365/",
       "redirect": "/products/email-security-microsoft-365/",
       "statusCode": 301
     },
     {
-      "route": "/services/email-security-microsoft-365/index.html",
+      "route": "/services/email-security-microsoft-365/*",
       "redirect": "/products/email-security-microsoft-365/",
       "statusCode": 301
     }
