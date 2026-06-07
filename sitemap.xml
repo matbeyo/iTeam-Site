@@ -79,6 +79,22 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Products Hub -->
+    <url>
+        <loc>https://www.iteam-sh.co.il/products/</loc>
+        <lastmod>2026-06-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Products -->
+    <url>
+        <loc>https://www.iteam-sh.co.il/products/email-security-microsoft-365/</loc>
+        <lastmod>2026-06-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Articles Hub -->
     <url>
         <loc>https://www.iteam-sh.co.il/articles/</loc>
