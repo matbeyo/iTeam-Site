@@ -48,6 +48,15 @@
     gtag('config', GA_MEASUREMENT_ID); // Google Analytics
     gtag('config', GOOGLE_ADS_ID);     // Google Ads
 
+    // --- Google Ads conversion ---
+    // Call window.iteamTrackLeadConversion() when a lead completes (e.g. the
+    // contact form is submitted successfully). The conversion label lives here
+    // next to the tag IDs; it honors Consent Mode just like the tags above.
+    var ADS_LEAD_CONVERSION_LABEL = 'AW-715641717/ArPTCKj1-OQZEPWmn9UC';
+    window.iteamTrackLeadConversion = function () {
+        gtag('event', 'conversion', { send_to: ADS_LEAD_CONVERSION_LABEL });
+    };
+
     // --- Load the cookie-consent banner UI ---
     var ccScript = document.createElement('script');
     ccScript.async = true;

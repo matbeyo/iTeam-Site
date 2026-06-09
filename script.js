@@ -223,6 +223,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: new FormData(contactForm),
                     headers: { 'Accept': 'application/json' }
                 }).then(function() {
+                    // Google Ads: count a successful submission as a lead conversion
+                    if (window.iteamTrackLeadConversion) { window.iteamTrackLeadConversion(); }
+
                     // Success - show custom message with aria-live for screen readers
                     var formWrapper = document.querySelector('.contact-form-wrapper');
                     formWrapper.innerHTML = '<div class="form-success" role="status" aria-live="polite">' +
