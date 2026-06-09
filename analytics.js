@@ -1,18 +1,22 @@
 /**
- * Google tag (gtag.js) — Google Analytics 4 with Google Consent Mode v2.
+ * Google tag (gtag.js) — Google Analytics 4 + Google Ads, with Google Consent Mode v2.
  *
  * Privacy-first setup:
- *   • Analytics cookies are DENIED by default — no tracking cookies are stored
- *     until the visitor clicks "אישור" (Accept) in the cookie banner.
+ *   • All storage (analytics + advertising) is DENIED by default — no tracking
+ *     or advertising cookies are stored until the visitor clicks "אישור" (Accept)
+ *     in the cookie banner.
  *   • The banner UI lives in cookie-consent.js (loaded at the bottom of this
- *     file) and flips analytics_storage to "granted" once the visitor accepts.
+ *     file) and flips consent to "granted" once the visitor accepts.
  *   • The choice is remembered in localStorage, so the banner shows only once.
  *
- * The Measurement ID is defined here once — change it in this single place.
+ * Tag IDs are defined here once — change them in this single place.
+ *   GA_MEASUREMENT_ID — Google Analytics 4 (website traffic)
+ *   GOOGLE_ADS_ID     — Google Ads (conversion tracking & remarketing)
  */
 (function () {
-    var GA_MEASUREMENT_ID = 'G-5RR5E57Z5F';
-    var CONSENT_KEY = 'iteam-cookie-consent'; // shared with cookie-consent.js: 'granted' | 'denied'
+    var GA_MEASUREMENT_ID = 'G-5RR5E57Z5F';   // Google Analytics 4
+    var GOOGLE_ADS_ID = 'AW-715641717';        // Google Ads
+    var CONSENT_KEY = 'iteam-cookie-consent';  // shared with cookie-consent.js: 'granted' | 'denied'
 
     // --- gtag bootstrap (must run before any consent/config calls) ---
     window.dataLayer = window.dataLayer || [];
@@ -22,24 +26,27 @@
     // --- Apply any previously saved choice as the default consent state ---
     var saved = null;
     try { saved = localStorage.getItem(CONSENT_KEY); } catch (e) {}
+    var consentState = saved === 'granted' ? 'granted' : 'denied';
 
+    // Consent Mode — analytics + advertising storage all gated behind consent.
     gtag('consent', 'default', {
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: saved === 'granted' ? 'granted' : 'denied',
+        ad_storage: consentState,
+        ad_user_data: consentState,
+        ad_personalization: consentState,
+        analytics_storage: consentState,
         wait_for_update: 500
     });
 
-    // --- Load the gtag.js library from Google ---
+    // --- Load the gtag.js library from Google (one library serves both tags) ---
     var gaScript = document.createElement('script');
     gaScript.async = true;
     gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
     document.head.appendChild(gaScript);
 
-    // --- Initialize Analytics (honors the consent state set above) ---
+    // --- Initialize both tags (they honor the consent state set above) ---
     gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID);
+    gtag('config', GA_MEASUREMENT_ID); // Google Analytics
+    gtag('config', GOOGLE_ADS_ID);     // Google Ads
 
     // --- Load the cookie-consent banner UI ---
     var ccScript = document.createElement('script');

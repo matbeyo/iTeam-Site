@@ -31,8 +31,12 @@
     }
 
     function applyConsent(value) {
+        var state = value === 'granted' ? 'granted' : 'denied';
         gtag('consent', 'update', {
-            analytics_storage: value === 'granted' ? 'granted' : 'denied'
+            analytics_storage: state, // Google Analytics
+            ad_storage: state,        // Google Ads (cookies)
+            ad_user_data: state,      // Google Ads (data sent to Google)
+            ad_personalization: state // Google Ads (remarketing)
         });
     }
 
@@ -76,8 +80,8 @@
         wrap.setAttribute('aria-label', 'הודעת קובצי Cookie');
         wrap.innerHTML =
             '<strong class="iteam-cc__title">אנו מכבדים את פרטיותך</strong>' +
-            '<p class="iteam-cc__desc">אתר זה משתמש בקובצי Cookie של Google Analytics כדי לנתח את התנועה ' +
-            'באתר ולשפר את חוויית הגלישה. תוכלו לאשר או לדחות. ' +
+            '<p class="iteam-cc__desc">אתר זה משתמש בקובצי Cookie של Google Analytics ו-Google Ads כדי ' +
+            'לנתח את התנועה באתר ולשפר את חוויית הגלישה, וכן לצורכי פרסום ושיווק. תוכלו לאשר או לדחות. ' +
             '<a class="iteam-cc__link" href="/privacy-policy/">למידע נוסף</a></p>' +
             '<div class="iteam-cc__actions">' +
             '<button type="button" class="iteam-cc__btn iteam-cc__btn--decline" data-cc-decline>דחייה</button>' +
