@@ -9,6 +9,16 @@
       "route": "/services/email-security-microsoft-365/*",
       "redirect": "/products/email-security-microsoft-365/",
       "statusCode": 301
+    },
+    {
+      "route": "/products/tikun-13/",
+      "redirect": "/services/tikun-13/",
+      "statusCode": 301
+    },
+    {
+      "route": "/products/tikun-13/*",
+      "redirect": "/services/tikun-13/",
+      "statusCode": 301
     }
   ]
 }
