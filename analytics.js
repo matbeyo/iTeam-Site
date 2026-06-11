@@ -40,7 +40,9 @@
     // --- Load the gtag.js library from Google (one library serves both tags) ---
     var gaScript = document.createElement('script');
     gaScript.async = true;
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    // URL uses the Google Ads ID so Google's tag verifier finds AW-… in the page source.
+    // One gtag.js library still serves both tags (GA4 + Ads) via the gtag('config', …) calls below.
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GOOGLE_ADS_ID;
     document.head.appendChild(gaScript);
 
     // --- Initialize both tags (they honor the consent state set above) ---
