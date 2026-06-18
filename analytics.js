@@ -56,7 +56,12 @@
     // next to the tag IDs; it honors Consent Mode just like the tags above.
     var ADS_LEAD_CONVERSION_LABEL = 'AW-715641717/ArPTCKj1-OQZEPWmn9UC';
     window.iteamTrackLeadConversion = function () {
+        // Google Ads: count the submission as a lead conversion.
         gtag('event', 'conversion', { send_to: ADS_LEAD_CONVERSION_LABEL });
+        // Google Analytics 4: log a standard lead event so the same submission
+        // shows up in GA4 (Reports → Engagement → Events, name: generate_lead).
+        // It goes to GA by default (no send_to override) and honors Consent Mode.
+        gtag('event', 'generate_lead');
     };
 
     // --- Load the cookie-consent banner UI ---
