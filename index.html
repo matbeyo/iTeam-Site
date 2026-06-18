@@ -779,6 +779,7 @@
                         <source src="videos/customer-testimonials.mp4" type="video/mp4">
                         הדפדפן שלך אינו תומך בתגית וידאו.
                     </video>
+                    <button type="button" class="customers-video-overlay" aria-label="נגן את סרטון ההמלצות"></button>
                 </div>
             </div>
         </div>
@@ -977,6 +978,26 @@
 
         // Expose stop function for accessibility widget
         window._testimonialsStopAutoPlay = stopAutoPlay;
+    })();
+    </script>
+
+    <!-- Click-to-play for the customer testimonial video -->
+    <script>
+    (function() {
+        var wrap = document.querySelector('.customers-video');
+        if (!wrap) return;
+        var video = wrap.querySelector('video');
+        var overlay = wrap.querySelector('.customers-video-overlay');
+        if (!video || !overlay) return;
+
+        overlay.addEventListener('click', function() {
+            video.play();
+        });
+
+        // Once playback starts, drop the overlay so the native controls take over.
+        video.addEventListener('play', function() {
+            overlay.remove();
+        }, { once: true });
     })();
     </script>
 </body>

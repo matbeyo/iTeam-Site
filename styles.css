@@ -2115,6 +2115,19 @@ ul {
     object-fit: cover;
 }
 
+/* Transparent click-to-play layer over the poster; removed once playback starts */
+.customers-video-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
 @keyframes customersScroll {
     0% {
         transform: translateX(0);
