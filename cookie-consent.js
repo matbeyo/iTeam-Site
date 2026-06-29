@@ -38,6 +38,10 @@
             ad_user_data: state,      // Google Ads (data sent to Google)
             ad_personalization: state // Google Ads (remarketing)
         });
+        // Notify non-Google consumers (e.g. the Meta Pixel) of the same choice.
+        try {
+            document.dispatchEvent(new CustomEvent('iteam-consent-change', { detail: state }));
+        } catch (e) {}
     }
 
     // --- Styles (brand colors, RTL) ---
@@ -80,8 +84,8 @@
         wrap.setAttribute('aria-label', 'הודעת קובצי Cookie');
         wrap.innerHTML =
             '<strong class="iteam-cc__title">אנו מכבדים את פרטיותך</strong>' +
-            '<p class="iteam-cc__desc">אתר זה משתמש בקובצי Cookie של Google Analytics ו-Google Ads כדי ' +
-            'לנתח את התנועה באתר ולשפר את חוויית הגלישה, וכן לצורכי פרסום ושיווק. תוכלו לאשר או לדחות. ' +
+            '<p class="iteam-cc__desc">אתר זה משתמש בקובצי Cookie של Google Analytics, Google Ads ו-Meta (Facebook) ' +
+            'כדי לנתח את התנועה באתר ולשפר את חוויית הגלישה, וכן לצורכי פרסום ושיווק. תוכלו לאשר או לדחות. ' +
             '<a class="iteam-cc__link" href="/privacy-policy/">למידע נוסף</a></p>' +
             '<div class="iteam-cc__actions">' +
             '<button type="button" class="iteam-cc__btn iteam-cc__btn--decline" data-cc-decline>דחייה</button>' +

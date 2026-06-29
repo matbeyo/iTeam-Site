@@ -62,6 +62,10 @@
         // shows up in GA4 (Reports → Engagement → Events, name: generate_lead).
         // It goes to GA by default (no send_to override) and honors Consent Mode.
         gtag('event', 'generate_lead');
+        // Meta Pixel: count the submission as a Lead. fbq always exists (stub in
+        // meta-pixel.js); it only reaches Facebook if the visitor consented,
+        // otherwise the call harmlessly no-ops — same consent gate as above.
+        if (typeof window.fbq === 'function') { window.fbq('track', 'Lead'); }
     };
 
     // --- Load the cookie-consent banner UI ---
@@ -69,4 +73,12 @@
     ccScript.async = true;
     ccScript.src = '/cookie-consent.js';
     document.head.appendChild(ccScript);
+
+    // --- Load the Meta (Facebook) Pixel — consent-gated, like the tags above.
+    // It self-gates on the same 'iteam-cookie-consent' choice, so it sends
+    // nothing to Facebook until the visitor accepts in the banner. ---
+    var fbScript = document.createElement('script');
+    fbScript.async = true;
+    fbScript.src = '/meta-pixel.js';
+    document.head.appendChild(fbScript);
 })();
