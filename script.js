@@ -222,22 +222,39 @@ document.addEventListener('DOMContentLoaded', function() {
                     method: 'POST',
                     body: new FormData(contactForm),
                     headers: { 'Accept': 'application/json' }
-                }).then(function() {
-                    // Google Ads: count a successful submission as a lead conversion
-                    if (window.iteamTrackLeadConversion) { window.iteamTrackLeadConversion(); }
+                }).then(function(response) {
+                    // fetch() only rejects on a network failure — an HTTP error response
+                    // (form paused, blocked, spam-rejected, over quota, etc.) still
+                    // resolves here. So we must confirm Formspree actually ACCEPTED the
+                    // submission before treating it as a real lead. Formspree returns a
+                    // 2xx with { ok: true } on success, or a 4xx with { ok: false,
+                    // errors: [...] } on failure.
+                    return response.json().catch(function() { return {}; }).then(function(data) {
+                        if (!response.ok || data.ok === false) {
+                            var msg = (data.errors && data.errors.map(function(err) { return err.message; }).join(', ')) ||
+                                ('Formspree responded with status ' + response.status);
+                            throw new Error(msg);
+                        }
 
-                    // Success - show custom message with aria-live for screen readers
-                    var formWrapper = document.querySelector('.contact-form-wrapper');
-                    formWrapper.innerHTML = '<div class="form-success" role="status" aria-live="polite">' +
-                        '<svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" aria-hidden="true">' +
-                        '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>' +
-                        '<polyline points="22 4 12 14.01 9 11.01"/>' +
-                        '</svg>' +
-                        '<h3>הפנייה נשלחה בהצלחה!</h3>' +
-                        '<p>תודה שפנית אלינו. נחזור אליך בהקדם האפשרי.</p>' +
-                        '</div>';
+                        // Genuine success — Formspree stored the lead. ONLY now do we count
+                        // it as a conversion (GA4 generate_lead + Google Ads + Meta Pixel).
+                        if (window.iteamTrackLeadConversion) { window.iteamTrackLeadConversion(); }
+
+                        // Success - show custom message with aria-live for screen readers
+                        var formWrapper = document.querySelector('.contact-form-wrapper');
+                        formWrapper.innerHTML = '<div class="form-success" role="status" aria-live="polite">' +
+                            '<svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" aria-hidden="true">' +
+                            '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>' +
+                            '<polyline points="22 4 12 14.01 9 11.01"/>' +
+                            '</svg>' +
+                            '<h3>הפנייה נשלחה בהצלחה!</h3>' +
+                            '<p>תודה שפנית אלינו. נחזור אליך בהקדם האפשרי.</p>' +
+                            '</div>';
+                    });
                 }).catch(function(error) {
-                    // Error handling
+                    // Network failure OR a non-successful Formspree response. Do NOT fire
+                    // the conversion, and tell the visitor the message didn't go through
+                    // so they can try again (rather than showing a false "success").
                     submitBtn.disabled = false;
                     submitBtn.textContent = originalBtnText;
                     console.error('Form submission error:', error);
