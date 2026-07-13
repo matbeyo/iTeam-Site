@@ -48,14 +48,41 @@
     // --- Initialize both tags (they honor the consent state set above) ---
     gtag('js', new Date());
     gtag('config', GA_MEASUREMENT_ID); // Google Analytics
-    gtag('config', GOOGLE_ADS_ID);     // Google Ads
+    // allow_enhanced_conversions lets the Ads tag attach the hashed lead
+    // details set via gtag('set', 'user_data', …) below (Enhanced Conversions).
+    gtag('config', GOOGLE_ADS_ID, { allow_enhanced_conversions: true });
+
+    // Enhanced Conversions expects phone numbers in E.164 (+972…) format.
+    // Accepts local Israeli input like "050-1234567" or "03 1234567".
+    function phoneToE164(phone) {
+        var digits = String(phone || '').replace(/\D/g, '');
+        if (!digits) return '';
+        if (digits.indexOf('972') === 0) return '+' + digits;
+        if (digits.charAt(0) === '0') return '+972' + digits.slice(1);
+        return '+' + digits;
+    }
 
     // --- Google Ads conversion ---
-    // Call window.iteamTrackLeadConversion() when a lead completes (e.g. the
-    // contact form is submitted successfully). The conversion label lives here
-    // next to the tag IDs; it honors Consent Mode just like the tags above.
+    // Call window.iteamTrackLeadConversion({ email, phone }) when a lead
+    // completes (e.g. the contact form is submitted successfully). The
+    // conversion label lives here next to the tag IDs; it honors Consent Mode
+    // just like the tags above.
     var ADS_LEAD_CONVERSION_LABEL = 'AW-715641717/ArPTCKj1-OQZEPWmn9UC';
-    window.iteamTrackLeadConversion = function () {
+    window.iteamTrackLeadConversion = function (lead) {
+        // Enhanced Conversions: hand the Google tag the lead's email/phone as
+        // "user-provided data". gtag normalizes and SHA-256-hashes the values
+        // in the browser before anything is sent, and Consent Mode's
+        // ad_user_data signal gates whether they are sent at all. Must be set
+        // BEFORE the conversion event fires on this page.
+        lead = lead || {};
+        var userData = {};
+        if (lead.email) { userData.email = String(lead.email).trim().toLowerCase(); }
+        var e164 = phoneToE164(lead.phone);
+        if (e164) { userData.phone_number = e164; }
+        if (userData.email || userData.phone_number) {
+            gtag('set', 'user_data', userData);
+        }
+
         // Google Ads: count the submission as a lead conversion.
         gtag('event', 'conversion', { send_to: ADS_LEAD_CONVERSION_LABEL });
         // Google Analytics 4: log a standard lead event so the same submission

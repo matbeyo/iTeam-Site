@@ -238,7 +238,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Genuine success — Formspree stored the lead. ONLY now do we count
                         // it as a conversion (GA4 generate_lead + Google Ads + Meta Pixel).
-                        if (window.iteamTrackLeadConversion) { window.iteamTrackLeadConversion(); }
+                        // Email + phone feed Google Ads Enhanced Conversions; the Google
+                        // tag hashes them in-browser and consent gates whether they're sent.
+                        if (window.iteamTrackLeadConversion) {
+                            window.iteamTrackLeadConversion({
+                                email: emailInput.value,
+                                phone: phoneInput.value
+                            });
+                        }
 
                         // Success - show custom message with aria-live for screen readers
                         var formWrapper = document.querySelector('.contact-form-wrapper');
