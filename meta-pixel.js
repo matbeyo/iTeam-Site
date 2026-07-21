@@ -35,6 +35,7 @@
     })(window);
 
     var libraryRequested = false;
+    var initialized = false;
     var active = false;
 
     // Fetch fbevents.js from Facebook (once). Until this runs, no request ever
@@ -53,16 +54,24 @@
     function activate() {
         if (active) return;
         active = true;
-        loadLibrary();
-        window.fbq('init', PIXEL_ID);
-        window.fbq('track', 'PageView');
+        if (!initialized) {
+            initialized = true;
+            loadLibrary();
+            window.fbq('init', PIXEL_ID);
+            window.fbq('track', 'PageView');
+        } else {
+            // The visitor revoked and then granted consent again on this page.
+            window.fbq('consent', 'grant');
+        }
     }
 
     // Best-effort stop if a visitor who already accepted changes their mind in
     // the same session. (Cookies already set are cleared by the browser /
     // "delete cookies"; this just halts any further events.)
     function deactivate() {
-        if (active) window.fbq('consent', 'revoke');
+        if (!active) return;
+        active = false;
+        window.fbq('consent', 'revoke');
     }
 
     function applyConsent(value) {
@@ -86,7 +95,9 @@
         grant: activate,
         revoke: deactivate,
         track: function (eventName, params) {
-            if (typeof window.fbq === 'function') window.fbq('track', eventName, params);
+            if (active && typeof window.fbq === 'function') {
+                window.fbq('track', eventName, params);
+            }
         }
     };
 })();

@@ -87,12 +87,15 @@
         gtag('event', 'conversion', { send_to: ADS_LEAD_CONVERSION_LABEL });
         // Google Analytics 4: log a standard lead event so the same submission
         // shows up in GA4 (Reports → Engagement → Events, name: generate_lead).
-        // It goes to GA by default (no send_to override) and honors Consent Mode.
-        gtag('event', 'generate_lead');
-        // Meta Pixel: count the submission as a Lead. fbq always exists (stub in
-        // meta-pixel.js); it only reaches Facebook if the visitor consented,
-        // otherwise the call harmlessly no-ops — same consent gate as above.
-        if (typeof window.fbq === 'function') { window.fbq('track', 'Lead'); }
+        // Scope it explicitly to GA4 so it is not routed to the Ads destination
+        // alongside the dedicated conversion event above.
+        gtag('event', 'generate_lead', { send_to: GA_MEASUREMENT_ID });
+        // Meta Pixel: count the submission as a Lead only while Meta consent is
+        // active. Using the consent-aware wrapper prevents a pre-consent event
+        // from sitting in fbq's queue and being replayed after a later opt-in.
+        if (window.iteamMetaPixel && typeof window.iteamMetaPixel.track === 'function') {
+            window.iteamMetaPixel.track('Lead');
+        }
     };
 
     // --- Load the cookie-consent banner UI ---
