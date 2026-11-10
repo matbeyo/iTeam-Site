@@ -700,12 +700,69 @@
             }
 
         }
+    
+        /* FAQ */
+        .faq-section { padding: 80px 0; }
+        .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq-item { background: #fff; border: 1px solid rgba(0,31,63,0.1); border-radius: 12px; padding: 0 20px; }
+        .faq-item summary { cursor: pointer; padding: 18px 0; font-weight: 600; color: var(--primary-color); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; color: var(--accent-color); font-size: 1.4rem; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item p { margin: 0 0 18px; line-height: 1.8; }
+        /* Topic cards */
+        .topics-section { padding: 80px 0; background: var(--bg-light, #f8fafc); }
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .topic-card { background: #fff; border: 1px solid rgba(0,31,63,0.08); border-radius: 16px; padding: 28px; }
+        .topic-card h3 { color: var(--primary-color); margin: 0 0 12px; font-size: 1.2rem; }
+        .topic-card p { margin: 0 0 12px; line-height: 1.8; }
+        .topic-card a { color: var(--accent-color); font-weight: 600; }
     </style>
     <!-- SEO: canonical / social -->
     <meta property="og:image" content="https://iteam-sh.co.il/images/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:image" content="https://iteam-sh.co.il/images/og-default.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "מה זה DLP ולמה העסק שלנו צריך את זה?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DLP (Data Loss Prevention) היא מערכת למניעת זליגת מידע: היא מזהה מידע רגיש ומונעת את הוצאתו מהארגון בטעות או בכוונה. זה מגן על הלקוחות שלכם ועוזר לעמוד בדרישות תיקון 13 לחוק הגנת הפרטיות."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "איזה פתרונות אבטחת מידע מתאימים לעסק קטן או בינוני?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "לרוב השילוב הנכון כולל הגנה על תחנות קצה ושרתים, הגנת דואר, הזדהות דו-שלבית, גיבוי מוגן מכופר וניהול הרשאות. אנחנו ממפים את הסיכונים ובונים תוכנית לפי התקציב."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "מה ההבדל בין רכישת תוכנת אבטחה לשירות אבטחת מידע?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "תוכנה לבד לא מספיקה – צריך להגדיר אותה נכון, לעקוב אחרי התראות ולעדכן. בשירות מנוהל הצוות שלנו אחראי שההגנה באמת עובדת לאורך זמן."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "האם אתם עוזרים בהיערכות לתיקון 13?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "כן. אנחנו מלווים את כל התהליך: מיפוי מאגרי מידע, הטמעת אמצעי הגנה ו-DLP, נהלים, הדרכות וליווי DPO ו-CISO."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to Content -->
@@ -1087,6 +1144,61 @@
                             </div>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="topics-section" aria-labelledby="topics-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="topics-title">פתרונות אבטחת מידע לעסקים</h2>
+                    <p>הטמעה, אינטגרציה וניהול שוטף של מערכות ההגנה</p>
+                </div>
+                <div class="topics-grid">
+                    <article class="topic-card">
+                        <h3>מניעת זליגת מידע (DLP)</h3>
+                        <p>מערכות DLP מזהות מידע רגיש – פרטי לקוחות, מסמכים פיננסיים ומידע אישי – וחוסמות העברה שלו החוצה במייל, בהעלאה לענן או בהעתקה להתקן נייד. זה גם חלק מרכזי בהיערכות לתיקון 13.</p>
+                        <a href="../tikun-13/">היערכות לתיקון 13 &#8592;</a>
+                    </article>
+                    <article class="topic-card">
+                        <h3>הטמעת מערכות אבטחת מידע</h3>
+                        <p>אנחנו בוחרים, מטמיעים ומגדירים את כלי ההגנה – אנטי-וירוס ו-EDR לתחנות ושרתים, חומת אש, הזדהות דו-שלבית והגנת דואר – ומוודאים שהם עובדים יחד.</p>
+                    </article>
+                    <article class="topic-card">
+                        <h3>אינטגרציה ושירותי אבטחת מידע מנוהלים</h3>
+                        <p>כחברת אינטגרציה אנחנו מחברים את פתרונות האבטחה לתשתית הקיימת שלכם, ומנהלים אותם לאורך זמן: ניטור התראות, עדכונים ובדיקות תקופתיות.</p>
+                    </article>
+                    <article class="topic-card">
+                        <h3>אבטחת דואר ל-Microsoft 365</h3>
+                        <p>רוב המתקפות מתחילות במייל. הגנה מתקדמת על תיבות הדואר חוסמת פישינג, התחזות ונוזקות לפני שהם מגיעים לעובדים.</p>
+                        <a href="../../products/email-security-microsoft-365/">אבטחת אימייל ל-Microsoft 365 &#8592;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="faq-title">שאלות נפוצות על אבטחת מידע לעסקים</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>מה זה DLP ולמה העסק שלנו צריך את זה?</summary>
+                        <p>DLP (Data Loss Prevention) היא מערכת למניעת זליגת מידע: היא מזהה מידע רגיש ומונעת את הוצאתו מהארגון בטעות או בכוונה. זה מגן על הלקוחות שלכם ועוזר לעמוד בדרישות תיקון 13 לחוק הגנת הפרטיות.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>איזה פתרונות אבטחת מידע מתאימים לעסק קטן או בינוני?</summary>
+                        <p>לרוב השילוב הנכון כולל הגנה על תחנות קצה ושרתים, הגנת דואר, הזדהות דו-שלבית, גיבוי מוגן מכופר וניהול הרשאות. אנחנו ממפים את הסיכונים ובונים תוכנית לפי התקציב.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>מה ההבדל בין רכישת תוכנת אבטחה לשירות אבטחת מידע?</summary>
+                        <p>תוכנה לבד לא מספיקה – צריך להגדיר אותה נכון, לעקוב אחרי התראות ולעדכן. בשירות מנוהל הצוות שלנו אחראי שההגנה באמת עובדת לאורך זמן.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>האם אתם עוזרים בהיערכות לתיקון 13?</summary>
+                        <p>כן. אנחנו מלווים את כל התהליך: מיפוי מאגרי מידע, הטמעת אמצעי הגנה ו-DLP, נהלים, הדרכות וליווי DPO ו-CISO.</p>
+                    </details>
                 </div>
             </div>
         </section>

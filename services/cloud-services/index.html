@@ -971,12 +971,85 @@
                 font-size: 0.9rem;
             }
         }
+    
+        /* FAQ */
+        .faq-section { padding: 80px 0; }
+        .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq-item { background: #fff; border: 1px solid rgba(0,31,63,0.1); border-radius: 12px; padding: 0 20px; }
+        .faq-item summary { cursor: pointer; padding: 18px 0; font-weight: 600; color: var(--primary-color); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; color: var(--accent-color); font-size: 1.4rem; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item p { margin: 0 0 18px; line-height: 1.8; }
+        /* Topic cards */
+        .topics-section { padding: 80px 0; background: var(--bg-light, #f8fafc); }
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .topic-card { background: #fff; border: 1px solid rgba(0,31,63,0.08); border-radius: 16px; padding: 28px; }
+        .topic-card h3 { color: var(--primary-color); margin: 0 0 12px; font-size: 1.2rem; }
+        .topic-card p { margin: 0 0 12px; line-height: 1.8; }
+        .topic-card a { color: var(--accent-color); font-weight: 600; }
     </style>
     <!-- SEO: canonical / social -->
     <meta property="og:image" content="https://iteam-sh.co.il/images/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:image" content="https://iteam-sh.co.il/images/og-default.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "מה ההבדל בין ענן ציבורי, ענן פרטי וענן היברידי?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ענן ציבורי (כמו Microsoft Azure) מספק משאבים גמישים לפי שימוש. ענן פרטי הוא סביבה ייעודית לעסק שלכם. ענן היברידי משלב בין השניים או בין הענן לשרתים במשרד. ההמלצה תלויה במערכות, בדרישות האבטחה ובתקציב."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "האם המידע שלנו מאובטח בענן?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "כן, כשהסביבה מוגדרת נכון: הצפנה, הזדהות דו-שלבית, ניהול הרשאות, ניטור וגיבוי. אנחנו מקימים ומנהלים את סביבת הענן לפי עקרונות אבטחת מידע ומשלבים אותה עם שירותי אבטחת המידע שלנו."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "כמה זמן לוקח לעבור לענן?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "זה תלוי בכמות המערכות והמידע. מעבר של עסק קטן יכול להסתיים בתוך ימים, ופרויקטים גדולים מתבצעים בשלבים. אנחנו מתכננים את המעבר כך שהעבודה השוטפת לא תיפגע."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "האם אפשר להמשיך לעבוד עם התוכנות הקיימות שלנו?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ברוב המקרים כן. תוכנות שמותקנות על שרת אפשר להריץ על שרת וירטואלי או שרת טרמינל בענן, והעובדים מתחברים אליהן מרחוק כמו קודם."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "מה כולל שירות ענן מנוהל?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ניטור זמינות וביצועים, עדכוני אבטחה, ניהול משתמשים והרשאות, גיבויים, טיפול בתקלות ותמיכה טכנית לעובדים – כך שאין צורך באיש IT פנימי שמתמחה בענן."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "איך מתחילים?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "פגישת אפיון ללא עלות: ממפים את המערכות והצרכים, ומקבלים המלצה והצעת מחיר מותאמת לעסק."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to Content -->
@@ -1439,6 +1512,77 @@
                             <circle cx="370" cy="290" r="2" fill="rgba(13,148,136,0.15)"/>
                         </svg>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="topics-section" aria-labelledby="topics-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="topics-title">פתרונות ענן לעסקים – מה מתאים לכם?</h2>
+                    <p>השירותים שלנו לפי הצורך של העסק</p>
+                </div>
+                <div class="topics-grid">
+                    <article class="topic-card">
+                        <h3>פתרונות ענן לעסקים</h3>
+                        <p>אין פתרון ענן אחד שמתאים לכולם. אנחנו בוחנים את המערכות, התקציב ודרישות האבטחה של העסק ובונים שילוב מתאים – ענן ציבורי, ענן פרטי או סביבה היברידית שמחברת בין הענן לשרתים במשרד.</p>
+                    </article>
+                    <article class="topic-card">
+                        <h3>מחשוב ענן לעסקים</h3>
+                        <p>העברת שרתים, אפליקציות וסביבות עבודה לענן מאפשרת לעובדים לעבוד מכל מקום, להוסיף משאבים בדקות ולהפסיק להשקיע בחומרה שמתיישנת. אנחנו מתכננים את ההגירה ומלווים אותה עד שהכול עובד.</p>
+                    </article>
+                    <article class="topic-card">
+                        <h3>שירותי ענן מנוהלים</h3>
+                        <p>אנחנו לא רק מקימים – אנחנו גם מנהלים: ניטור, עדכונים, אבטחה, גיבויים ותמיכה שוטפת בסביבת הענן, כך שהצוות שלכם מתעסק בעסק ולא בתשתיות.</p>
+                        <a href="../it-management-support/">ניהול ותמיכה במחשוב &#8592;</a>
+                    </article>
+                    <article class="topic-card">
+                        <h3>שרת טרמינל בענן</h3>
+                        <p>סביבת עבודה מרוחקת (Remote Desktop) בענן שמאפשרת לעובדים להתחבר לתוכנות העסק – הנהלת חשבונות, ERP ומערכות פנימיות – מכל מחשב, באופן מאובטח ובלי להחזיק שרת במשרד.</p>
+                    </article>
+                    <article class="topic-card">
+                        <h3>אחסון ענן לעסקים</h3>
+                        <p>אחסון קבצים מרכזי ומאובטח בענן, עם הרשאות לפי משתמשים, שיתוף בין עובדים וגישה מכל מכשיר – במקום כוננים מקומיים ותיקיות משותפות שקשה לנהל.</p>
+                    </article>
+                    <article class="topic-card">
+                        <h3>גיבוי בענן לעסקים</h3>
+                        <p>גיבוי אוטומטי ומוצפן של שרתים, מחשבים ו-Microsoft 365, עם ניטור שוטף ושחזור מהיר גם אחרי מתקפת כופר.</p>
+                        <a href="../cloud-backup/">למידע נוסף על גיבוי בענן &#8592;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="faq-title">שאלות נפוצות על שירותי ענן לעסקים</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>מה ההבדל בין ענן ציבורי, ענן פרטי וענן היברידי?</summary>
+                        <p>ענן ציבורי (כמו Microsoft Azure) מספק משאבים גמישים לפי שימוש. ענן פרטי הוא סביבה ייעודית לעסק שלכם. ענן היברידי משלב בין השניים או בין הענן לשרתים במשרד. ההמלצה תלויה במערכות, בדרישות האבטחה ובתקציב.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>האם המידע שלנו מאובטח בענן?</summary>
+                        <p>כן, כשהסביבה מוגדרת נכון: הצפנה, הזדהות דו-שלבית, ניהול הרשאות, ניטור וגיבוי. אנחנו מקימים ומנהלים את סביבת הענן לפי עקרונות אבטחת מידע ומשלבים אותה עם שירותי אבטחת המידע שלנו.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>כמה זמן לוקח לעבור לענן?</summary>
+                        <p>זה תלוי בכמות המערכות והמידע. מעבר של עסק קטן יכול להסתיים בתוך ימים, ופרויקטים גדולים מתבצעים בשלבים. אנחנו מתכננים את המעבר כך שהעבודה השוטפת לא תיפגע.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>האם אפשר להמשיך לעבוד עם התוכנות הקיימות שלנו?</summary>
+                        <p>ברוב המקרים כן. תוכנות שמותקנות על שרת אפשר להריץ על שרת וירטואלי או שרת טרמינל בענן, והעובדים מתחברים אליהן מרחוק כמו קודם.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>מה כולל שירות ענן מנוהל?</summary>
+                        <p>ניטור זמינות וביצועים, עדכוני אבטחה, ניהול משתמשים והרשאות, גיבויים, טיפול בתקלות ותמיכה טכנית לעובדים – כך שאין צורך באיש IT פנימי שמתמחה בענן.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>איך מתחילים?</summary>
+                        <p>פגישת אפיון ללא עלות: ממפים את המערכות והצרכים, ומקבלים המלצה והצעת מחיר מותאמת לעסק.</p>
+                    </details>
                 </div>
             </div>
         </section>
