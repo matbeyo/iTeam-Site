@@ -36,6 +36,13 @@
         <priority>0.4</priority>
     </url>
 
+    <url>
+        <loc>https://iteam-sh.co.il/privacy-policy/</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
     <!-- Service Pages -->
     <url>
         <loc>https://iteam-sh.co.il/services/it-management-support/</loc>
@@ -120,6 +127,20 @@
     <!-- Articles -->
     <url>
         <loc>https://iteam-sh.co.il/articles/cloud-it-trends/</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://iteam-sh.co.il/articles/managed-cloud-provider-guide/</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://iteam-sh.co.il/articles/cloud-security-and-backup/</loc>
         <lastmod>2026-11-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

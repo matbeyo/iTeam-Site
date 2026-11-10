@@ -69,7 +69,7 @@
             headline: headline, description: description, inLanguage: 'he', url: url,
             author: author ? { '@type': 'Person', name: author } : { '@type': 'Organization', name: 'iTeam-sh' },
             publisher: { '@type': 'Organization', name: 'iTeam-sh', logo: { '@type': 'ImageObject', url: SITE + '/images/iteam-logo.png' } },
-            image: SITE + '/images/iteam-logo.png', mainEntityOfPage: url
+            image: SITE + '/images/og-default.png', mainEntityOfPage: url
         };
         if (dateISO) { article.datePublished = dateISO; article.dateModified = dateISO; }
         if (author && authorTitle) article.author.jobTitle = authorTitle;
@@ -81,7 +81,11 @@
                 { '@type': 'ListItem', position: 3, name: headline }
             ]
         };
-        [article, breadcrumb].forEach(function (obj) {
+        // Skip if the page already ships static JSON-LD (avoids duplicate Article entities)
+        var hasStaticLd = Array.prototype.some.call(
+            document.head.querySelectorAll('script[type="application/ld+json"]'),
+            function (el) { return /"@type"\s*:\s*"Article"/.test(el.textContent); });
+        if (!hasStaticLd) [article, breadcrumb].forEach(function (obj) {
             var s = document.createElement('script');
             s.type = 'application/ld+json';
             s.textContent = JSON.stringify(obj);
