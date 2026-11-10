@@ -72,7 +72,7 @@
     },
     {
       "route": "/גיבוי-בענן",
-      "redirect": "/services/cloud-services/",
+      "redirect": "/services/cloud-backup/",
       "statusCode": 301
     },
     {
