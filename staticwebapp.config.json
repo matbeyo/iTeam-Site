@@ -26,17 +26,7 @@
       "statusCode": 301
     },
     {
-      "route": "/home/",
-      "redirect": "/",
-      "statusCode": 301
-    },
-    {
       "route": "/outsourcing",
-      "redirect": "/services/it-management-support/",
-      "statusCode": 301
-    },
-    {
-      "route": "/outsourcing/",
       "redirect": "/services/it-management-support/",
       "statusCode": 301
     },
@@ -46,17 +36,7 @@
       "statusCode": 301
     },
     {
-      "route": "/it-management-and-support/",
-      "redirect": "/services/it-management-support/",
-      "statusCode": 301
-    },
-    {
       "route": "/it-systems-optimization",
-      "redirect": "/services/it-optimization/",
-      "statusCode": 301
-    },
-    {
-      "route": "/it-systems-optimization/",
       "redirect": "/services/it-optimization/",
       "statusCode": 301
     },
@@ -66,17 +46,7 @@
       "statusCode": 301
     },
     {
-      "route": "/cloud-services/",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
       "route": "/eset-antivirus",
-      "redirect": "/services/cyber-security/",
-      "statusCode": 301
-    },
-    {
-      "route": "/eset-antivirus/",
       "redirect": "/services/cyber-security/",
       "statusCode": 301
     },
@@ -86,17 +56,7 @@
       "statusCode": 301
     },
     {
-      "route": "/cybersecurity-solutions/",
-      "redirect": "/services/cyber-security/",
-      "statusCode": 301
-    },
-    {
       "route": "/system-implementation-and-upgrades",
-      "redirect": "/services/infrastructure-projects/",
-      "statusCode": 301
-    },
-    {
-      "route": "/system-implementation-and-upgrades/",
       "redirect": "/services/infrastructure-projects/",
       "statusCode": 301
     },
@@ -106,37 +66,7 @@
       "statusCode": 301
     },
     {
-      "route": "/שירותי-ענן-לעסקים-קטנים/",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99-%D7%A2%D7%A0%D7%9F-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%A7%D7%98%D7%A0%D7%99%D7%9D",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99-%D7%A2%D7%A0%D7%9F-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%A7%D7%98%D7%A0%D7%99%D7%9D/",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
       "route": "/שרותי-אחסון-בענן",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
-      "route": "/שרותי-אחסון-בענן/",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%A9%D7%A8%D7%95%D7%AA%D7%99-%D7%90%D7%97%D7%A1%D7%95%D7%9F-%D7%91%D7%A2%D7%A0%D7%9F",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%A9%D7%A8%D7%95%D7%AA%D7%99-%D7%90%D7%97%D7%A1%D7%95%D7%9F-%D7%91%D7%A2%D7%A0%D7%9F/",
       "redirect": "/services/cloud-services/",
       "statusCode": 301
     },
@@ -146,37 +76,7 @@
       "statusCode": 301
     },
     {
-      "route": "/גיבוי-בענן/",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%92%D7%99%D7%91%D7%95%D7%99-%D7%91%D7%A2%D7%A0%D7%9F",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%92%D7%99%D7%91%D7%95%D7%99-%D7%91%D7%A2%D7%A0%D7%9F/",
-      "redirect": "/services/cloud-services/",
-      "statusCode": 301
-    },
-    {
       "route": "/מאמרים/שירותי-ענן-לעסקים-קטנים",
-      "redirect": "/articles/cloud-it-trends/",
-      "statusCode": 301
-    },
-    {
-      "route": "/מאמרים/שירותי-ענן-לעסקים-קטנים/",
-      "redirect": "/articles/cloud-it-trends/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99-%D7%A2%D7%A0%D7%9F-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%A7%D7%98%D7%A0%D7%99%D7%9D",
-      "redirect": "/articles/cloud-it-trends/",
-      "statusCode": 301
-    },
-    {
-      "route": "/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99-%D7%A2%D7%A0%D7%9F-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%A7%D7%98%D7%A0%D7%99%D7%9D/",
       "redirect": "/articles/cloud-it-trends/",
       "statusCode": 301
     },
