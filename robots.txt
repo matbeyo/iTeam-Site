@@ -1,5 +1,5 @@
 # robots.txt for iTeam-sh
-# https://www.iteam-sh.co.il
+# https://iteam-sh.co.il
 
 # Allow all search engines to crawl the entire site
 User-agent: *
@@ -16,4 +16,4 @@ Disallow: /articles/_template/
 # Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://www.iteam-sh.co.il/sitemap.xml
+Sitemap: https://iteam-sh.co.il/sitemap.xml
