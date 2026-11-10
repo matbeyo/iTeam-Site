@@ -595,6 +595,9 @@
 }
 .inline-cta-text span { color: rgba(255, 255, 255, 0.75); font-size: 0.98rem; }
 .inline-cta .btn { position: relative; z-index: 1; flex-shrink: 0; }
+/* Buttons inside article text must keep button colors (not the link teal) */
+.article-content a.btn,
+.article-content a.btn:hover { color: #fff; text-decoration: none; }
 
 /* ---------------------------------------------------------------------
    Closing CTA — full-bleed dark (matches the site CTA style)
