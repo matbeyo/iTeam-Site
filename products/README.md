@@ -36,7 +36,7 @@ Copy `products/email-security-microsoft-365/` and rename it to your **slug**
 ```
 products/email-security-microsoft-365/  →  products/<your-slug>/
 ```
-→ live at `https://www.iteam-sh.co.il/products/<your-slug>/`
+→ live at `https://iteam-sh.co.il/products/<your-slug>/`
 
 ### 2. Edit the page content + metadata
 In your new `index.html`, update **all** of these (search the file for the old
@@ -77,7 +77,7 @@ grep -rl "products/email-security-microsoft-365/" --include="*.html" .
 
 ### 5. Add it to the sitemap
 Copy a `<url>` block in `sitemap.xml` (under the **Products** comment) and point
-it at `https://www.iteam-sh.co.il/products/<your-slug>/`.
+it at `https://iteam-sh.co.il/products/<your-slug>/`.
 
 ### 6. Ship it
 Push to `main` — GitHub Actions deploys to Azure automatically.

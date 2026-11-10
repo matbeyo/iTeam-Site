@@ -21,7 +21,7 @@
         var cfg = {};
         try { cfg = JSON.parse(cfgEl.textContent) || {}; } catch (e) { return; }
 
-        var SITE = 'https://www.iteam-sh.co.il';
+        var SITE = 'https://iteam-sh.co.il';
         var headline = (document.title || '').replace(/\s*[|–-]\s*iTeam-sh\s*$/, '').trim();
         var descMeta = document.querySelector('meta[name="description"]');
         var description = descMeta ? descMeta.getAttribute('content') : '';

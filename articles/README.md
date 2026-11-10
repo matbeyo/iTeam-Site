@@ -32,7 +32,7 @@ hyphen-separated — it becomes the URL):
 ```
 articles/_template/  →  articles/my-new-article/
 ```
-→ live at `https://www.iteam-sh.co.il/articles/my-new-article/`
+→ live at `https://iteam-sh.co.il/articles/my-new-article/`
 
 ### 2. Edit the 5 marked spots (look for ✏️ in the file)
 1. **`<title>`** — the headline + ` | iTeam-sh`
@@ -154,7 +154,7 @@ make a block fade in on scroll.
   so they read correctly in the RTL flow.
 - **Social share image:** by default articles share the iTeam logo. For a custom
   preview, drop `cover.jpg` (1200×630) in the article folder and add
-  `<meta property="og:image" content="https://www.iteam-sh.co.il/articles/<slug>/cover.jpg">`.
+  `<meta property="og:image" content="https://iteam-sh.co.il/articles/<slug>/cover.jpg">`.
 - `_template/` is a reference only — not linked, excluded from the sitemap and
   `robots.txt`. Copy from it; don't delete it.
 - **Author byline:** add `"author"`, `"authorTitle"` and `"authorImage"` (e.g. `"/images/CEO/ronen.jpg"`) to the config to show a byline — *נכתב על ידי …* — at the bottom of the article. Omit them for no byline. The author also feeds the `Person` author in the structured data.
