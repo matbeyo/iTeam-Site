@@ -1,6 +1,22 @@
 {
   "routes": [
     {
+      "route": "/articles/_template/*",
+      "statusCode": 404
+    },
+    {
+      "route": "/README.md",
+      "statusCode": 404
+    },
+    {
+      "route": "/articles/README.md",
+      "statusCode": 404
+    },
+    {
+      "route": "/products/README.md",
+      "statusCode": 404
+    },
+    {
       "route": "/services/email-security-microsoft-365/",
       "redirect": "/products/email-security-microsoft-365/",
       "statusCode": 301
