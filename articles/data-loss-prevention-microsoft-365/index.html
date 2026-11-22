@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) — Google Analytics -->
+    <script src="/analytics.js"></script>
+    <script>(function(){document.documentElement.setAttribute('data-theme','light');document.documentElement.classList.add('js');})();</script>
+    <title>מניעת זליגת מידע (DLP): מדריך מעשי ל-Microsoft 365 | iTeam-sh</title>
+    <meta name="description" content="מה זה DLP ואיך מונעים זליגת מידע בעסק: 5 תרחישי דליפה נפוצים, איך בונים מדיניות ב-Microsoft 365 בלי לעצור את העבודה, ואיך זה מתחבר לתיקון 13.">
+    <script id="article-config" type="application/json">
+    {"category": "אבטחת מידע", "date": "2026-11-20", "author": "רונן סומברג", "authorTitle": "סמנכ\"ל טכנולוגיות מידע באייתים", "authorImage": "/images/CEO/ronen.jpg"}
+    </script>
+
+
+    <meta name="author" content="iTeam-sh">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="iTeam-sh">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:image" content="https://iteam-sh.co.il/images/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://iteam-sh.co.il/images/og-default.png">
+
+    <link rel="icon" type="image/x-icon" href="../../images/fav.ico">
+    <link rel="icon" type="image/png" href="../../images/fav.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../article.css?v=2">
+    <link rel="canonical" href="https://iteam-sh.co.il/articles/data-loss-prevention-microsoft-365/">
+    <meta property="og:url" content="https://iteam-sh.co.il/articles/data-loss-prevention-microsoft-365/">
+    <meta property="og:title" content="מניעת זליגת מידע (DLP): מדריך מעשי ל-Microsoft 365 | iTeam-sh">
+    <meta property="og:description" content="מה זה DLP ואיך מונעים זליגת מידע בעסק: 5 תרחישי דליפה נפוצים, איך בונים מדיניות ב-Microsoft 365 בלי לעצור את העבודה, ואיך זה מתחבר לתיקון 13.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "מניעת זליגת מידע (DLP): מדריך מעשי ל-Microsoft 365", "description": "מה זה DLP ואיך מונעים זליגת מידע בעסק: 5 תרחישי דליפה נפוצים, איך בונים מדיניות ב-Microsoft 365 בלי לעצור את העבודה, ואיך זה מתחבר לתיקון 13.", "image": "https://iteam-sh.co.il/images/og-default.png", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "he", "mainEntityOfPage": "https://iteam-sh.co.il/articles/data-loss-prevention-microsoft-365/", "author": {"@type": "Person", "name": "רונן סומברג", "jobTitle": "סמנכ\"ל טכנולוגיות מידע באייתים", "image": "https://iteam-sh.co.il/images/CEO/ronen.jpg"}, "publisher": {"@type": "Organization", "name": "iTeam-sh", "url": "https://iteam-sh.co.il/", "logo": {"@type": "ImageObject", "url": "https://iteam-sh.co.il/images/iteam-logo.png"}}}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "דף הבית", "item": "https://iteam-sh.co.il/"}, {"@type": "ListItem", "position": 2, "name": "מאמרים", "item": "https://iteam-sh.co.il/articles/"}, {"@type": "ListItem", "position": 3, "name": "מניעת זליגת מידע (DLP): מדריך מעשי ל-Microsoft 365"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "מה זה DLP במילים פשוטות?", "acceptedAnswer": {"@type": "Answer", "text": "DLP (Data Loss Prevention) הוא מנגנון שמזהה מידע רגיש – כמו מספרי תעודת זהות, פרטי כרטיסי אשראי או מסמכים מסווגים – ומונע ממנו לצאת מהארגון בלי הרשאה, למשל במייל לנמען חיצוני, בשיתוף קובץ או בהעתקה להתקן USB."}}, {"@type": "Question", "name": "האם צריך לקנות מוצר נוסף כדי להפעיל DLP ב-Microsoft 365?", "acceptedAnswer": {"@type": "Answer", "text": "לא תמיד. חלק מיכולות ה-DLP של Microsoft Purview כלולות ברישיונות נפוצים כמו Microsoft 365 Business Premium ו-E3, ויכולות מתקדמות כמו DLP לתחנות קצה דורשות רישוי נוסף. כדאי להתחיל בבדיקה של מה שכבר כלול ברישיונות שלכם."}}, {"@type": "Question", "name": "האם DLP יפריע לעובדים לעבוד?", "acceptedAnswer": {"@type": "Answer", "text": "לא, אם מטמיעים נכון. מתחילים במצב בדיקה שרק מתעד, אחר כך מציגים לעובד התראה עם הסבר, ורק בסוף חוסמים – ובמקרים מוצדקים מאפשרים לעובד לעקוף עם נימוק שנרשם."}}, {"@type": "Question", "name": "איך DLP קשור לתיקון 13 לחוק הגנת הפרטיות?", "acceptedAnswer": {"@type": "Answer", "text": "תיקון 13 מחמיר את האחריות של עסקים על מידע אישי ואת הסנקציות על דליפה. DLP הוא אחד הכלים המעשיים שמראים שהעסק נקט אמצעים סבירים למנוע חשיפה של מידע אישי, לצד ניהול הרשאות, הצפנה ונהלים."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">דלג לתוכן הראשי</a>
+    <div id="blurry-filter" aria-hidden="true"></div>
+    <div class="reading-progress" aria-hidden="true"><span id="reading-bar"></span></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav" aria-label="ניווט ראשי">
+                <a href="/" class="logo" aria-label="iTeam-sh - חזרה לדף הבית">
+                    <img src="../../images/iteam-logo.png" alt="iTeam-sh לוגו" class="logo-img">
+                </a>
+                <ul class="nav-links" id="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="/#services" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">שירותים</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/services/it-consulting/">ייעוץ IT לעסקים</a></li>
+                            <li><a href="/services/infrastructure-projects/">הקמה ושדרוג מערכות</a></li>
+                            <li><a href="/services/it-management-support/">ניהול ותמיכה במחשוב</a></li>
+                            <li><a href="/services/it-optimization/">אופטימיזציה של מערכות IT</a></li>
+                            <li><a href="/services/cloud-services/">שירותי ענן לעסקים</a></li>
+                            <li><a href="/services/cloud-backup/">גיבוי בענן לעסקים</a></li>
+                            <li><a href="/services/cyber-security/">פתרונות אבטחת מידע</a></li>
+                            <li><a href="/services/tikun-13/">תיקון 13 — הגנת הפרטיות</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="/products/" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">מוצרים</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/products/email-security-microsoft-365/">אבטחת אימייל ל-Microsoft 365</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about/">אודות</a></li>
+                    <li><a href="/why-it/">למה IT?</a></li>
+                    <li><a href="/articles/">מאמרים</a></li>
+                    <li><a href="tel:072-2504001" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 072-2504001</a></li>
+                    <li><a href="/#contact" class="btn btn-nav">צור קשר</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <article>
+        <!-- Hero (badge, breadcrumb label, date/read-time pill are filled in automatically) -->
+        <header class="article-hero" aria-labelledby="article-title">
+            <div class="hero-grid" aria-hidden="true"></div>
+            <div class="hero-glow" aria-hidden="true"></div>
+            <canvas id="article-particles" class="hero-particles" aria-hidden="true"></canvas>
+            <div class="container">
+                <nav class="breadcrumb" aria-label="מיקום בניווט">
+                    <a href="/">דף הבית</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&larr;</span>
+                    <a href="/articles/">מאמרים</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">&larr;</span>
+                    <span class="breadcrumb-current" aria-current="page"></span>
+                </nav>
+                <div class="article-hero-inner">
+                    <span class="article-badge"><span class="article-badge-dot" aria-hidden="true"></span><span class="badge-text"></span></span>
+                    <h1 id="article-title"><span class="mark-accent">מניעת זליגת מידע</span> (DLP): מדריך מעשי ל-Microsoft 365</h1>
+                    <p class="article-lead">5 תרחישי דליפה שקורים בכל עסק, ואיך מפעילים הגנה ב-Microsoft 365 בלי לעצור את העבודה.</p>
+                    <div class="article-meta"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Body -->
+        <div class="article-body-section">
+            <div class="container">
+                <div class="article-content">
+                    <p class="lead">רוב דליפות המידע בעסקים לא מתחילות בהאקר. הן מתחילות בעובד שצירף את הקובץ הלא נכון, שיתף תיקייה עם "כל מי שיש לו את הקישור", או שלח לעצמו טבלת לקוחות למייל הפרטי "כדי לעבוד מהבית".</p>
+                    <p>מניעת זליגת מידע (<span dir="ltr">DLP – Data Loss Prevention</span>) היא שכבת ההגנה שתופסת בדיוק את הרגעים האלה. במדריך הזה נסביר מה זה DLP, אילו תרחישים הוא מונע, ואיך מפעילים אותו ב-Microsoft 365 בלי לעצור את העבודה בעסק.</p>
+
+                    <h2>מה זה DLP – ולמה אנטי-וירוס וחומת אש לא מספיקים?</h2>
+                    <p>אנטי-וירוס, חומת אש ו<a href="/products/email-security-microsoft-365/">אבטחת דואר נכנס</a> שומרים על הארגון מפני מה שמנסה <strong>להיכנס</strong>. DLP שומר על מה ש<strong>יוצא</strong>. הוא סורק מיילים, קבצים ושיתופים, מזהה מידע רגיש לפי תבניות (למשל מספר תעודת זהות או כרטיס אשראי), מילות מפתח או תוויות סיווג – ומפעיל כלל: לתעד, להתריע, להצפין או לחסום.</p>
+                    <p>ההבדל חשוב: רוב הדליפות הן טעויות אנוש של עובדים לגיטימיים עם הרשאות לגיטימיות. אף חומת אש לא תעצור אותן.</p>
+
+                    <h2>5 תרחישי דליפה נפוצים בעסקים</h2>
+                    <h3>1. מייל לנמען הלא נכון</h3>
+                    <p>השלמה אוטומטית של כתובת, ו"קובץ שכר נובמבר" יוצא ליוסי הספק במקום ליוסי מהנהלת החשבונות. DLP יכול לזהות שהקובץ מכיל מספרי תעודת זהות ולעצור את השליחה לנמען חיצוני.</p>
+                    <h3>2. שיתוף פתוח ב-OneDrive או SharePoint</h3>
+                    <p>קישור "כל מי שיש לו את הקישור" לתיקיית לקוחות שמועבר הלאה, ונשאר פתוח שנים. כלל DLP יכול למנוע שיתוף אנונימי של קבצים שמכילים מידע רגיש.</p>
+                    <h3>3. העברה למייל פרטי</h3>
+                    <p>עובד שולח לעצמו קבצים ל-Gmail לפני מעבר לעבודה אחרת – או סתם כדי לעבוד מהבית. DLP מזהה ומתעד, ואפשר גם לחסום שליחה של מידע מסווג לדומיינים פרטיים.</p>
+                    <h3>4. העתקה ל-USB או העלאה לשירות חיצוני</h3>
+                    <p>בתחנות הקצה, DLP יכול למנוע העתקה של קבצים רגישים להתקן נייד או העלאה שלהם לאתרי שיתוף קבצים וכלי AI ציבוריים.</p>
+                    <h3>5. צילומי מסך והדבקה בכלי AI</h3>
+                    <p>עובדים מדביקים טבלאות לקוחות בצ'אטבוטים ציבוריים כדי "לסדר את הנתונים". זה תרחיש חדש יחסית, וכדאי להתייחס אליו במדיניות – גם בכלים וגם בנוהל כתוב.</p>
+
+                    <div class="callout  reveal">
+                        <span class="callout-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+                        </span>
+                        <div class="callout-body">
+                            <p class="callout-title">טיפ</p>
+                            <p>לפני שקונים כלי חדש, בדקו מה כבר כלול ברישיונות ה-Microsoft 365 שלכם. בהרבה עסקים יכולות DLP בסיסיות למייל, OneDrive ו-SharePoint כבר שולמו – הן פשוט לא הופעלו.</p>
+                        </div>
+                    </div>
+
+                    <h2>איך מפעילים DLP ב-Microsoft 365 – שלב אחר שלב</h2>
+                    <p>ב-Microsoft 365 ה-DLP מנוהל דרך <span dir="ltr">Microsoft Purview</span>. התהליך שאנחנו ממליצים עליו בעסקים קטנים ובינוניים:</p>
+                    <ol>
+                        <li><strong>מיפוי מידע רגיש</strong> – מה בדיוק אתם מגינים עליו: תעודות זהות, פרטי אשראי וחשבונות בנק, מידע רפואי, חוזים, מחירונים. ב-Purview יש מזהים מובנים גם לתבניות ישראליות כמו מספר תעודת זהות.</li>
+                        <li><strong>מדיניות במצב בדיקה</strong> – מגדירים את הכללים כך שרק יתעדו, לשבועיים-שלושה. כך רואים כמה התראות היו מתקבלות ואילו מהן שגויות, לפני שמישהו נחסם.</li>
+                        <li><strong>התראות לעובדים</strong> – בשלב הבא העובד רואה הודעה קצרה ("הקובץ מכיל מספרי תעודת זהות, האם לשלוח לנמען חיצוני?"). זה גם כלי הדרכה, ומפחית טעויות אנוש מעצמו.</li>
+                        <li><strong>חסימה במקרים הברורים</strong> – רק אחרי הכיוונון. במקרים מוצדקים אפשר לאפשר עקיפה עם נימוק שנרשם ביומן.</li>
+                        <li><strong>ניטור ושיפור שוטף</strong> – סקירה חודשית של האירועים, עדכון הכללים והדרכה ממוקדת למחלקות שבהן יש הכי הרבה אירועים.</li>
+                    </ol>
+
+                    <div class="qa-card reveal">
+                        <span class="qa-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            שאלה נפוצה
+                        </span>
+                        <p class="qa-question">"מה זה DLP במילים פשוטות?"</p>
+                        <p class="qa-answer">DLP (Data Loss Prevention) הוא מנגנון שמזהה מידע רגיש – כמו מספרי תעודת זהות, פרטי כרטיסי אשראי או מסמכים מסווגים – ומונע ממנו לצאת מהארגון בלי הרשאה, למשל במייל לנמען חיצוני, בשיתוף קובץ או בהעתקה להתקן USB.</p>
+                    </div>
+
+                    <h2>DLP לבד לא מספיק: מה עוד צריך</h2>
+                    <ul>
+                        <li><strong>ניהול הרשאות</strong> – עובד שלא צריך גישה לתיקיית השכר לא צריך לקבל אותה. פחות הרשאות = פחות מה לדלוף.</li>
+                        <li><strong>תוויות סיווג</strong> – סימון מסמכים כ"פנימי" או "חסוי" מאפשר לכללי DLP ולהצפנה לעבוד בצורה מדויקת.</li>
+                        <li><strong>הזדהות דו-שלבית</strong> – חשבון שנפרץ הופך את התוקף ל"עובד לגיטימי". בלי MFA, גם DLP טוב מתקשה.</li>
+                        <li><strong>נוהל והדרכה</strong> – מסמך קצר שמסביר לעובדים מה מותר ומה אסור, כולל שימוש בכלי AI.</li>
+                    </ul>
+                    <p>כל אלה הם חלק מתוכנית <a href="/services/cyber-security/">אבטחת מידע</a> מסודרת, ולעסקים שמחזיקים מידע אישי הם גם חלק מה<a href="/services/tikun-13/">היערכות לתיקון 13 לחוק הגנת הפרטיות</a>.</p>
+
+                    <div class="qa-card reveal">
+                        <span class="qa-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            שאלה נפוצה
+                        </span>
+                        <p class="qa-question">"האם צריך לקנות מוצר נוסף כדי להפעיל DLP ב-Microsoft 365?"</p>
+                        <p class="qa-answer">לא תמיד. חלק מיכולות ה-DLP של Microsoft Purview כלולות ברישיונות נפוצים כמו Microsoft 365 Business Premium ו-E3, ויכולות מתקדמות כמו DLP לתחנות קצה דורשות רישוי נוסף. כדאי להתחיל בבדיקה של מה שכבר כלול ברישיונות שלכם.</p>
+                    </div>
+                    <div class="qa-card reveal">
+                        <span class="qa-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            שאלה נפוצה
+                        </span>
+                        <p class="qa-question">"האם DLP יפריע לעובדים לעבוד?"</p>
+                        <p class="qa-answer">לא, אם מטמיעים נכון. מתחילים במצב בדיקה שרק מתעד, אחר כך מציגים לעובד התראה עם הסבר, ורק בסוף חוסמים – ובמקרים מוצדקים מאפשרים לעובד לעקוף עם נימוק שנרשם.</p>
+                    </div>
+
+                    <div class="takeaways reveal">
+                    <p class="takeaways-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        מה כדאי לזכור
+                    </p>
+                    <ul>
+                        <li>רוב הדליפות הן טעויות של עובדים, לא פריצות – ולכן צריך הגנה על המידע שיוצא.</li>
+                        <li>ב-Microsoft 365 יכולות DLP בסיסיות כבר כלולות ברישיונות רבים – בדקו לפני שקונים.</li>
+                        <li>מתחילים במצב בדיקה, עוברים להתראות, ורק אז חוסמים.</li>
+                        <li>DLP עובד הכי טוב יחד עם ניהול הרשאות, MFA, סיווג מסמכים ונוהל כתוב.</li>
+                    </ul>
+                    </div>
+
+                    <div class="inline-cta reveal">
+                        <div class="inline-cta-text">
+                            <strong>רוצים לדעת איפה המידע הרגיש שלכם חשוף?</strong>
+                            <span>בדיקת מוכנות ל-DLP ב-Microsoft 365: מה כבר כלול ברישיונות, אילו תרחישים פתוחים, ומה להפעיל קודם.</span>
+                        </div>
+                        <a href="/services/cyber-security/" class="btn btn-primary">לפתרונות אבטחת המידע</a>
+                    </div>
+
+                    <!-- end of article -->
+                    <a href="/articles/" class="article-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        חזרה לכל המאמרים
+                    </a>
+                </div>
+            </div>
+        </div>
+        </article>
+
+        <!-- Closing CTA (same on every article — no need to edit) -->
+        <section class="article-cta" aria-labelledby="article-cta-heading">
+            <div class="container">
+                <div class="article-cta-content reveal">
+                    <h2 id="article-cta-heading">רוצים שהטכנולוגיה תעבוד <span class="accent">בשביל העסק שלכם</span>?</h2>
+                    <p>ייעוץ ראשוני ללא עלות וללא התחייבות.</p>
+                    <div class="article-cta-buttons">
+                        <a href="/#contact" class="btn btn-primary">קבל הצעת מחיר</a>
+                        <a href="tel:072-2504001" class="btn btn-secondary">התקשרו: 072-2504001</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="../../images/iteam-logo.png" alt="iTeam-sh לוגו" class="logo-img">
+                    </a>
+                    <p class="footer-company-name">אייתים מחשבים וטכנולוגיות מידע</p>
+                    <p>פתרונות IT מקצועיים לעסקים</p>
+                </div>
+                <div class="footer-links">
+                    <h4>מידע</h4>
+                    <ul>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            רעננה
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            א׳-ה׳ 09:00-18:00
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                            <a href="/why-it/">למה צריך IT?</a>
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <a href="/articles/">מאמרים</a>
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" style="fill:var(--accent-color);stroke:none" width="16" height="16" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                            <a href="https://www.linkedin.com/company/iteam-sh/" target="_blank" rel="noopener">עקבו אחרינו בלינקדאין</a>
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" style="fill:var(--accent-color);stroke:none" width="16" height="16" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            <a href="https://www.youtube.com/@iteam-sh" target="_blank" rel="noopener">צפו בנו ביוטיוב</a>
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" style="fill:var(--accent-color);stroke:none" width="16" height="16" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.026 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971H15.83c-1.491 0-1.956.93-1.956 1.886v2.265h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+                            <a href="https://www.facebook.com/iteamsh" target="_blank" rel="noopener">עקבו אחרינו בפייסבוק</a>
+                        </li>
+                        <li class="footer-info-item">
+                            <svg viewBox="0 0 24 24" style="fill:var(--accent-color);stroke:none" width="16" height="16" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.413.56.218.96.478 1.38.898.42.42.68.82.898 1.38.164.422.36 1.057.413 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.413 2.227-.218.56-.478.96-.898 1.38-.42.42-.82.68-1.38.898-.422.164-1.057.36-2.227.413-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.413a3.71 3.71 0 0 1-1.38-.898 3.71 3.71 0 0 1-.898-1.38c-.164-.422-.36-1.057-.413-2.227-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.413-2.227.218-.56.478-.96.898-1.38.42-.42.82-.68 1.38-.898.422-.164 1.057-.36 2.227-.413 1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.88 5.88 0 0 0-2.126 1.384A5.88 5.88 0 0 0 .63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.88 5.88 0 0 0 1.384 2.126A5.88 5.88 0 0 0 4.14 23.37c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a6.14 6.14 0 0 0 3.51-3.51c.297-.763.5-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.88 5.88 0 0 0-1.384-2.126A5.88 5.88 0 0 0 19.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                            <a href="https://www.instagram.com/iteam.sh/" target="_blank" rel="noopener">עקבו אחרינו באינסטגרם</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>השירותים שלנו</h4>
+                    <ul>
+                        <li><a href="/services/it-consulting/">ייעוץ IT</a></li>
+                        <li><a href="/services/cloud-services/">שירותי ענן</a></li>
+                        <li><a href="/services/cloud-backup/">גיבוי בענן</a></li>
+                        <li><a href="/services/cyber-security/">אבטחת מידע</a></li>
+                        <li><a href="/services/it-management-support/">תמיכה טכנית</a></li>
+                        <li><a href="/services/infrastructure-projects/">הקמה ושדרוג מערכות</a></li>
+                        <li><a href="/services/it-optimization/">אופטימיזציה</a></li>
+                        <li><a href="/services/tikun-13/">תיקון 13</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>מוצרים</h4>
+                    <ul>
+                        <li><a href="/products/email-security-microsoft-365/">אבטחת אימייל</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>צרו קשר</h4>
+                    <p><a href="tel:072-2504001">072-2504001</a></p>
+                    <p><a href="mailto:info@iteam-sh.co.il">info@iteam-sh.co.il</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 אייתים מחשבים וטכנולוגיות מידע. כל הזכויות שמורות. | <a href="/accessibility.html" class="footer-accessibility-link">הצהרת נגישות</a> | <a href="/privacy-policy/" class="footer-accessibility-link">מדיניות פרטיות</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="חזרה למעלה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="../../script.js"></script>
+    <script src="../../article.js"></script>
+    <script src="../../accessibility-widget.js"></script>
+</body>
+</html>
