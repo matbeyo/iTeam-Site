@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) — Google Analytics (+ consent-gated Meta Pixel) -->
+    <script src="/analytics.js"></script>
+
+    <!-- Theme: always force light mode -->
+    <script>
+        (function() {
+            document.documentElement.setAttribute('data-theme', 'light');
+        })();
+    </script>
+
+    <!-- Landing page for paid campaigns: kept out of search results (the indexed page is /services/tikun-13/) -->
+    <title>שיחת אבחון חינם לתיקון 13 – בדקו איפה העסק עומד | iTeam-sh</title>
+    <meta name="description" content="שיחת אבחון חינם של 20 דקות עם מומחה אבטחת מידע: בודקים את מוכנות העסק לתיקון 13 לחוק הגנת הפרטיות ויוצאים עם תמונת מצב וצעדים הבאים.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://iteam-sh.co.il/services/tikun-13/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iteam-sh.co.il/lp/tikun-13/">
+    <meta property="og:title" content="מוכנים לתיקון 13? שיחת אבחון חינם | iTeam-sh">
+    <meta property="og:description" content="20 דקות עם מומחה אבטחת מידע. בסוף השיחה תדעו מה כבר בסדר, מה חסר ומה הצעד הבא.">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:site_name" content="iTeam-sh">
+    <meta property="og:image" content="https://iteam-sh.co.il/images/og-tikun-13.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://iteam-sh.co.il/images/og-tikun-13.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../images/fav.ico">
+    <link rel="icon" type="image/png" href="../../images/fav.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <!-- Shared .es-* page styles (copied from /services/tikun-13/) -->
+    <style>
+        /* ============================================================
+           Tikun 13 (Privacy Law) — page-scoped styles
+           Reuses the shared .es-* "console" design system (originally
+           built for the Email Security page). All classes es-* scoped
+           to .es-page. Reuses global tokens from styles.css.
+           ============================================================ */
+        .es-page {
+            --es-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --es-ink: #0a1628;
+            --es-night: #061021;
+            --es-teal: #2dd4bf;
+            --es-teal-2: #5eead4;
+            --es-line: rgba(255, 255, 255, 0.08);
+            --es-on-dark: #e6edf5;
+            --es-on-dark-mut: #9fb0c5;
+        }
+
+        /* ---------- shared section chrome ---------- */
+        .es-section { padding: 96px 0; position: relative; }
+        .es-eyebrow {
+            display: inline-flex; align-items: center; gap: 0.55rem;
+            font-family: var(--es-mono); font-size: 0.72rem; font-weight: 600;
+            letter-spacing: 0.16em; text-transform: uppercase;
+            color: var(--accent-color);
+        }
+        .es-eyebrow::before {
+            content: ''; width: 22px; height: 1px; background: var(--accent-color); opacity: 0.6;
+        }
+        .es-head { max-width: 720px; margin: 0 auto 3.25rem; text-align: center; }
+        .es-head h2 {
+            font-size: clamp(1.7rem, 3.6vw, 2.5rem); font-weight: 800;
+            letter-spacing: -0.02em; line-height: 1.2; margin: 0.9rem 0 0.6rem;
+            color: var(--text-primary);
+        }
+        .es-head p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; margin: 0; }
+        .es-section--dark .es-head h2 { color: #fff; }
+        .es-section--dark .es-head p { color: var(--es-on-dark-mut); }
+
+        .es-mono { font-family: var(--es-mono); }
+
+        /* ---------- reveal (gated on .es-js so no-JS shows all) ---------- */
+        .es-js .es-reveal {
+            opacity: 0; transform: translateY(26px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+        .es-js .es-reveal.is-visible { opacity: 1; transform: none; }
+
+        /* ============================================================
+           HERO — dark console
+           ============================================================ */
+        .es-hero {
+            position: relative; overflow: hidden;
+            padding: 150px 0 92px; color: var(--es-on-dark);
+            background:
+                radial-gradient(ellipse 70% 60% at 78% -10%, rgba(13, 148, 136, 0.22), transparent 60%),
+                radial-gradient(ellipse 60% 50% at 10% 110%, rgba(13, 148, 136, 0.10), transparent 55%),
+                linear-gradient(160deg, #071228 0%, #0a1b33 46%, #06122a 100%);
+        }
+        .es-hero::before { /* grid overlay */
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+            background-size: 44px 44px;
+            -webkit-mask-image: radial-gradient(ellipse 95% 80% at 65% 25%, #000 35%, transparent 82%);
+            mask-image: radial-gradient(ellipse 95% 80% at 65% 25%, #000 35%, transparent 82%);
+        }
+        .es-particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+        .es-hero .container { position: relative; z-index: 2; }
+
+        .es-hero .breadcrumb a { color: var(--es-on-dark-mut); }
+        .es-hero .breadcrumb a:hover { color: var(--es-teal-2); }
+        .es-hero .breadcrumb-current { color: var(--es-on-dark); }
+        .es-hero .breadcrumb-separator { color: rgba(255, 255, 255, 0.3); }
+
+        .es-hero-grid {
+            display: grid; grid-template-columns: 1.04fr 0.96fr;
+            gap: 3.2rem; align-items: center; margin-top: 1.5rem;
+        }
+
+        .es-badge {
+            display: inline-flex; align-items: center; gap: 0.55rem;
+            font-family: var(--es-mono); font-size: 0.72rem; font-weight: 500;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            color: var(--es-teal-2);
+            background: rgba(13, 148, 136, 0.12);
+            border: 1px solid rgba(45, 212, 191, 0.28);
+            padding: 0.42rem 0.95rem; border-radius: 100px;
+        }
+        .es-badge-dot {
+            width: 7px; height: 7px; border-radius: 50%; background: var(--es-teal);
+            box-shadow: 0 0 10px var(--es-teal); animation: es-pulse 2s ease-in-out infinite;
+        }
+        @keyframes es-pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5); }
+            50% { opacity: 0.55; box-shadow: 0 0 0 6px rgba(45, 212, 191, 0); }
+        }
+
+        .es-hero h1 {
+            font-size: clamp(2.1rem, 5vw, 3.35rem); font-weight: 800;
+            line-height: 1.16; letter-spacing: -0.02em; color: #fff;
+            margin: 1.15rem 0 0.5rem;
+        }
+        .es-accent {
+            color: var(--es-teal);
+            background: linear-gradient(rgba(45, 212, 191, 0.22), rgba(45, 212, 191, 0.22)) no-repeat;
+            background-position: 0 92%; background-size: 100% 0.3em;
+            -webkit-box-decoration-break: clone; box-decoration-break: clone;
+        }
+        .es-powered {
+            display: inline-flex; align-items: center; gap: 0.55rem; flex-wrap: wrap;
+            font-size: 0.9rem; color: var(--es-on-dark-mut); margin: 0.4rem 0 1.1rem;
+        }
+        .es-powered strong { color: #fff; font-weight: 600; }
+        .es-powered .es-dot-sep { color: rgba(255, 255, 255, 0.3); }
+        .es-lead {
+            font-size: 1.12rem; line-height: 1.8; color: #c5d3e6;
+            max-width: 46ch; margin: 0 0 1.7rem;
+        }
+        .es-hero-cta { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+        .es-btn-ghost {
+            display: inline-flex; align-items: center; gap: 0.55rem;
+            padding: 1rem 1.8rem; font-size: 1rem; font-weight: 600;
+            color: #fff; background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+        .es-btn-ghost:hover { background: rgba(255, 255, 255, 0.09); border-color: rgba(94, 234, 212, 0.5); transform: translateY(-1px); }
+        .es-btn-ghost svg { width: 18px; height: 18px; }
+
+        /* trust logos row */
+        .es-trust { margin-top: 2rem; }
+        .es-trust-label {
+            font-family: var(--es-mono); font-size: 0.66rem; letter-spacing: 0.14em;
+            text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-bottom: 0.7rem;
+        }
+        .es-trust-logos { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+        .es-trust-chip {
+            display: inline-flex; align-items: center; justify-content: center;
+            height: 46px; padding: 0 1.1rem; border-radius: 10px;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.6);
+        }
+        .es-trust-chip img { height: 24px; width: auto; display: block; }
+
+        /* ----- the console card (signature live scanner) ----- */
+        .es-console {
+            position: relative; border-radius: 18px;
+            background: linear-gradient(180deg, rgba(15, 32, 58, 0.92), rgba(8, 18, 38, 0.94));
+            border: 1px solid rgba(94, 234, 212, 0.2);
+            box-shadow: 0 36px 70px -24px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+            padding: 1.2rem 1.25rem 1.35rem;
+        }
+        .es-console-head {
+            display: flex; align-items: center; justify-content: space-between;
+            font-family: var(--es-mono); font-size: 0.68rem; letter-spacing: 0.1em;
+            text-transform: uppercase; color: #7f93ab;
+            padding-bottom: 0.85rem; border-bottom: 1px solid var(--es-line);
+        }
+        .es-console-title { display: inline-flex; align-items: center; gap: 0.5rem; color: #cfe0ef; }
+        .es-console-title svg { width: 15px; height: 15px; color: var(--es-teal); }
+        .es-live { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--es-teal); }
+        .es-live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--es-teal); box-shadow: 0 0 8px var(--es-teal); animation: es-pulse 1.4s ease-in-out infinite; }
+
+        .es-scan-rows { position: relative; margin-top: 0.65rem; overflow: hidden; border-radius: 10px; }
+        .es-scanline {
+            position: absolute; left: 0; right: 0; top: -46px; height: 46px; z-index: 0; pointer-events: none;
+            background: linear-gradient(180deg, transparent, rgba(45, 212, 191, 0.14), transparent);
+            animation: es-sweep 3.6s linear infinite;
+        }
+        @keyframes es-sweep { 0% { top: -46px; } 100% { top: 100%; } }
+
+        .es-scan-row {
+            position: relative; z-index: 1;
+            display: flex; align-items: center; gap: 0.7rem;
+            padding: 0.5rem 0.6rem; border-radius: 8px;
+            border-inline-start: 2px solid transparent;
+            transition: background 0.35s ease, opacity 0.35s ease, border-color 0.35s ease;
+        }
+        .es-scan-row .es-num { font-family: var(--es-mono); font-size: 0.74rem; color: #647d99; min-width: 1.6rem; }
+        .es-scan-name { flex: 1; font-size: 0.9rem; color: #cdd8e6; font-weight: 500; }
+        .es-scan-status {
+            font-family: var(--es-mono); font-size: 0.64rem; letter-spacing: 0.04em;
+            padding: 0.16rem 0.5rem; border-radius: 5px; white-space: nowrap;
+            color: #647d99; background: rgba(255, 255, 255, 0.04);
+        }
+        .es-scan-row.is-wait { opacity: 0.5; }
+        .es-scan-row.is-scan {
+            opacity: 1; background: rgba(13, 148, 136, 0.14); border-inline-start-color: var(--es-teal);
+        }
+        .es-scan-row.is-scan .es-scan-status { color: var(--es-night); background: var(--es-teal-2); }
+        .es-scan-row.is-pass { opacity: 1; }
+        .es-scan-row.is-pass .es-scan-name { color: #e6edf5; }
+        .es-scan-row.is-pass .es-num { color: var(--es-teal-2); }
+        .es-scan-row.is-pass .es-scan-status { color: var(--es-teal); background: rgba(45, 212, 191, 0.12); }
+
+        .es-verdict {
+            display: flex; align-items: center; gap: 0.8rem;
+            margin-top: 0.95rem; padding-top: 0.9rem; border-top: 1px solid var(--es-line);
+            font-family: var(--es-mono); font-size: 0.72rem; color: #9fb0c5;
+        }
+        .es-verdict-bar { flex: 1; height: 6px; border-radius: 100px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+        .es-verdict-bar i { display: block; height: 100%; width: 0%; border-radius: 100px;
+            background: linear-gradient(90deg, var(--accent-color), var(--es-teal)); transition: width 0.4s ease; }
+        .es-verdict-result { display: inline-flex; align-items: center; gap: 0.3rem; min-width: 6.5rem; justify-content: flex-end; }
+        .es-vr-clean { display: none; color: var(--es-teal); font-weight: 700; }
+        .es-verdict-result.is-clean .es-vr-scan { display: none; }
+        .es-verdict-result.is-clean .es-vr-clean { display: inline-flex; align-items: center; gap: 0.3rem; }
+
+        /* ============================================================
+           STATS band
+           ============================================================ */
+        .es-stats { background: #081427; position: relative; }
+        .es-stats::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 120% at 50% 0%, rgba(13, 148, 136, 0.1), transparent 60%);
+        }
+        .es-stats-grid {
+            position: relative; display: grid; grid-template-columns: repeat(4, 1fr);
+        }
+        .es-stat { padding: 2.4rem 1.4rem; text-align: center; border-inline-start: 1px solid rgba(255, 255, 255, 0.07); }
+        .es-stat:first-child { border-inline-start: 0; }
+        .es-stat-num {
+            font-family: var(--es-mono); font-weight: 700; color: var(--es-teal);
+            font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1; letter-spacing: -0.01em;
+            display: inline-flex; align-items: baseline; gap: 0.05em;
+        }
+        .es-stat-suf { color: var(--es-teal-2); font-size: 0.5em; font-weight: 600; }
+        .es-stat-label { color: #9fb0c5; font-size: 0.92rem; margin-top: 0.55rem; line-height: 1.45; }
+
+        /* ============================================================
+           PROBLEM / compare
+           ============================================================ */
+        .es-problem { background: var(--bg-primary); }
+        .es-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 960px; margin: 0 auto; }
+        .es-compare-card {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 1.9rem 1.75rem; box-shadow: var(--shadow-sm);
+        }
+        .es-compare-card h3 { font-size: 1.1rem; margin: 0 0 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
+        .es-compare-card.is-legacy h3 { color: var(--text-secondary); }
+        .es-compare-card.is-iteam {
+            border-color: rgba(13, 148, 136, 0.35);
+            box-shadow: 0 18px 40px -18px rgba(13, 148, 136, 0.4);
+            background: linear-gradient(180deg, #fff, #f5fffd);
+        }
+        .es-compare-card.is-iteam h3 { color: var(--primary-color); }
+        .es-compare-tag {
+            font-family: var(--es-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 0.2rem 0.55rem; border-radius: 5px; margin-inline-start: auto;
+        }
+        .is-legacy .es-compare-tag { color: #b45309; background: rgba(217, 119, 6, 0.12); }
+        .is-iteam .es-compare-tag { color: var(--accent-color); background: var(--accent-soft); }
+        .es-compare-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+        .es-compare-list li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.95rem; line-height: 1.55; color: var(--text-secondary); }
+        .es-compare-list li svg { width: 19px; height: 19px; flex-shrink: 0; margin-top: 0.12rem; }
+        .is-legacy .es-compare-list li svg { color: #dc2626; }
+        .is-iteam .es-compare-list li svg { color: var(--accent-color); }
+        .is-iteam .es-compare-list li { color: var(--text-primary); }
+
+        /* ============================================================
+           BENEFITS
+           ============================================================ */
+        .es-benefits { background: var(--bg-secondary); }
+        .es-grid { display: grid; gap: 1.4rem; }
+        .es-benefits .es-grid { grid-template-columns: repeat(3, 1fr); }
+        .es-card {
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg); padding: 1.9rem 1.7rem;
+            box-shadow: var(--shadow-sm); transition: var(--transition);
+            position: relative; overflow: hidden;
+        }
+        .es-card::after {
+            content: ''; position: absolute; inset-inline-start: 0; top: 0; height: 3px; width: 0;
+            background: linear-gradient(90deg, var(--accent-color), var(--es-teal)); transition: width 0.35s ease;
+        }
+        .es-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(13, 148, 136, 0.25); }
+        .es-card:hover::after { width: 100%; }
+        .es-card-icon {
+            width: 52px; height: 52px; border-radius: 13px;
+            background: var(--accent-soft); border: 1px solid rgba(13, 148, 136, 0.18);
+            display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;
+        }
+        .es-card-icon svg { width: 25px; height: 25px; color: var(--accent-color); }
+        .es-card h3 { font-size: 1.12rem; margin: 0 0 0.5rem; color: var(--text-primary); }
+        .es-card p { margin: 0; font-size: 0.95rem; line-height: 1.65; color: var(--text-secondary); }
+
+        /* ============================================================
+           PROCESS — dark numbered stack
+           ============================================================ */
+        .es-layers { background: linear-gradient(180deg, #0a1628 0%, #081428 100%); color: var(--es-on-dark); overflow: hidden; }
+        .es-layers::before {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+            background-size: 44px 44px;
+        }
+        .es-layers .container { position: relative; z-index: 1; }
+        .es-stack { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.85rem; }
+        .es-layer {
+            display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.25rem;
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg); padding: 1.25rem 1.4rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        }
+        .es-layer:hover {
+            transform: translateX(-6px); border-color: rgba(45, 212, 191, 0.4);
+            background: rgba(13, 148, 136, 0.08);
+        }
+        .es-layer-num {
+            font-family: var(--es-mono); font-size: 1.35rem; font-weight: 700; color: var(--es-teal);
+            min-width: 2.4rem; text-align: center; opacity: 0.85;
+        }
+        .es-layer-body { min-width: 0; }
+        .es-layer-body h3 { font-size: 1.1rem; margin: 0 0 0.3rem; color: #fff; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+        .es-layer-en {
+            font-family: var(--es-mono); font-size: 0.64rem; letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--es-teal-2); background: rgba(13, 148, 136, 0.14); padding: 0.14rem 0.5rem; border-radius: 5px;
+        }
+        .es-layer-body p { margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--es-on-dark-mut); }
+        .es-layer-icon {
+            width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+            background: rgba(13, 148, 136, 0.12); border: 1px solid rgba(45, 212, 191, 0.22);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .es-layer-icon svg { width: 23px; height: 23px; color: var(--es-teal-2); }
+
+        /* ============================================================
+           WHO IT APPLIES TO (split)
+           ============================================================ */
+        .es-beyond { background: var(--bg-primary); }
+        .es-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .es-feature {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 2.1rem 2rem; box-shadow: var(--shadow-sm);
+        }
+        .es-feature-icon {
+            width: 54px; height: 54px; border-radius: 13px; margin-bottom: 1.1rem;
+            background: var(--accent-soft); border: 1px solid rgba(13, 148, 136, 0.18);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .es-feature-icon svg { width: 26px; height: 26px; color: var(--accent-color); }
+        .es-feature h3 { font-size: 1.25rem; margin: 0 0 0.6rem; color: var(--text-primary); }
+        .es-feature p { margin: 0 0 1rem; font-size: 0.97rem; line-height: 1.7; color: var(--text-secondary); }
+        .es-apps { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+        .es-app-chip {
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            font-size: 0.83rem; font-weight: 500; color: var(--text-primary);
+            background: var(--bg-secondary); border: 1px solid var(--border-light);
+            padding: 0.4rem 0.8rem; border-radius: 100px;
+        }
+        .es-app-chip svg { width: 15px; height: 15px; color: var(--accent-color); }
+
+        /* ============================================================
+           SELF-CHECK modules
+           ============================================================ */
+        .es-platform { background: var(--bg-secondary); }
+        .es-modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; max-width: 980px; margin: 0 auto 1.6rem; }
+        .es-module {
+            position: relative; background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 1.4rem 1.4rem; display: flex; align-items: center; gap: 0.85rem;
+            transition: var(--transition);
+        }
+        .es-module:hover { border-color: rgba(13, 148, 136, 0.25); box-shadow: var(--shadow-md); }
+        .es-module-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .es-module-icon svg { width: 20px; height: 20px; color: var(--accent-color); }
+        .es-module span { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+        .es-module.is-active {
+            border-color: var(--accent-color); background: linear-gradient(180deg, #fff, #f0fdfa);
+            box-shadow: 0 16px 36px -16px rgba(13, 148, 136, 0.45);
+        }
+        .es-module-flag {
+            position: absolute; top: -10px; inset-inline-end: 14px;
+            font-family: var(--es-mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+            color: #fff; background: var(--accent-color); padding: 0.18rem 0.55rem; border-radius: 100px;
+        }
+        .es-platform-note {
+            max-width: 760px; margin: 0 auto; text-align: center; font-size: 0.97rem;
+            line-height: 1.7; color: var(--text-secondary);
+        }
+        .es-platform-note strong { color: var(--primary-color); }
+
+        /* ---------- sticky mobile CTA ---------- */
+        .es-sticky-cta { display: none; }
+        @media (max-width: 620px) {
+            .es-sticky-cta {
+                display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+                position: fixed; inset-inline: 14px; bottom: 14px; z-index: 95;
+                padding: 0.95rem 1.2rem; border-radius: var(--radius-md);
+                background: linear-gradient(180deg, var(--es-teal), var(--accent-color));
+                color: #fff; font-weight: 700; font-size: 1rem;
+                box-shadow: 0 12px 30px -8px rgba(13, 148, 136, 0.65);
+                opacity: 0; transform: translateY(140%); pointer-events: none;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .es-sticky-cta.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+            .es-sticky-cta svg { width: 18px; height: 18px; }
+            /* lift back-to-top above the sticky bar so they don't collide */
+            .back-to-top { bottom: 84px; }
+        }
+        @media (prefers-reduced-motion: reduce) { .es-sticky-cta { transition: none !important; } }
+        .a11y-no-animations .es-sticky-cta { transition: none !important; }
+
+        /* ============================================================
+           WHY iTeam
+           ============================================================ */
+        .es-why { background: var(--bg-primary); }
+        .es-why .es-grid { grid-template-columns: repeat(4, 1fr); }
+        .es-why-item { text-align: center; padding: 0.5rem; }
+        .es-why-icon {
+            width: 58px; height: 58px; border-radius: 16px; margin: 0 auto 1rem;
+            background: var(--accent-soft); border: 1px solid rgba(13, 148, 136, 0.18);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .es-why-icon svg { width: 27px; height: 27px; color: var(--accent-color); }
+        .es-why-item h3 { font-size: 1.05rem; margin: 0 0 0.4rem; color: var(--text-primary); }
+        .es-why-item p { margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); }
+
+        /* ============================================================
+           LEAD CTA — dark, with form
+           ============================================================ */
+        .es-cta { position: relative; overflow: hidden; padding: 92px 0; color: var(--es-on-dark); background: #0a1628; }
+        .es-cta::before {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+        .es-cta::after {
+            content: ''; position: absolute; top: 50%; inset-inline-start: 50%;
+            transform: translate(-50%, -50%); width: 65vw; height: 65vw; max-width: 760px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, transparent 65%);
+        }
+        .es-cta .container { position: relative; z-index: 1; }
+        .es-cta-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 3rem; align-items: center; }
+        .es-cta-text h2 { font-size: clamp(1.7rem, 3.6vw, 2.45rem); font-weight: 800; line-height: 1.18; color: #fff; margin: 0.8rem 0 0.7rem; }
+        .es-cta-text > p { font-size: 1.06rem; line-height: 1.7; color: #c5d3e6; margin: 0 0 1.5rem; max-width: 44ch; }
+        .es-cta-points { list-style: none; margin: 0 0 1.7rem; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+        .es-cta-points li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.97rem; color: #d6e1ee; }
+        .es-cta-points li svg { width: 19px; height: 19px; color: var(--es-teal); flex-shrink: 0; }
+        .es-quick { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+        .es-quick a {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.7rem 1.1rem; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.92rem;
+            border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; background: rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        .es-quick a:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(94, 234, 212, 0.5); transform: translateY(-1px); }
+        .es-quick a svg { width: 17px; height: 17px; }
+        .es-quick a.is-wa:hover { border-color: #25d366; }
+        .es-quick a.is-wa svg { color: #25d366; }
+
+        .es-form-head { margin-bottom: 1.1rem; }
+        .es-form-head h3 { font-size: 1.2rem; margin: 0 0 0.3rem; color: var(--text-primary); }
+        .es-form-head p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); }
+        .es-cta .contact-form-wrapper { backdrop-filter: none; }
+
+        /* ============================================================
+           Reduced-motion / accessibility-widget guards
+           ============================================================ */
+        @media (prefers-reduced-motion: reduce) {
+            .es-scanline, .es-badge-dot, .es-live-dot { animation: none !important; }
+            .es-js .es-reveal { opacity: 1 !important; transform: none !important; transition: none; }
+        }
+        .a11y-no-animations .es-scanline,
+        .a11y-no-animations .es-badge-dot,
+        .a11y-no-animations .es-live-dot { animation: none !important; }
+        .a11y-no-animations .es-particles { display: none !important; }
+        .a11y-no-animations .es-reveal { opacity: 1 !important; transform: none !important; }
+
+        /* ============================================================
+           Responsive
+           ============================================================ */
+        @media (max-width: 980px) {
+            .es-hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+            .es-console { max-width: 520px; }
+            .es-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .es-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+            .es-stat:nth-child(odd) { border-inline-start: 0; }
+            .es-benefits .es-grid { grid-template-columns: repeat(2, 1fr); }
+            .es-modules { grid-template-columns: repeat(2, 1fr); }
+            .es-why .es-grid { grid-template-columns: repeat(2, 1fr); }
+            .es-cta-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+        }
+        @media (max-width: 620px) {
+            .es-section { padding: 70px 0; }
+            .es-hero { padding: 130px 0 72px; }
+            .es-compare { grid-template-columns: 1fr; }
+            .es-benefits .es-grid { grid-template-columns: 1fr; }
+            .es-split { grid-template-columns: 1fr; }
+            .es-modules { grid-template-columns: 1fr; }
+            .es-why .es-grid { grid-template-columns: 1fr; }
+            .es-layer { grid-template-columns: auto 1fr; gap: 0.9rem; padding: 1.1rem; }
+            .es-layer-icon { display: none; }
+            .es-stat-num { font-size: 2rem; }
+        }
+    </style>
+
+    <style>
+        /* ============================================================
+           Landing page (lp) additions — Tikun 13 free diagnostic call
+           ============================================================ */
+        .lp-nav { display: flex; align-items: center; justify-content: space-between; }
+        .lp-nav-actions { display: flex; align-items: center; gap: 1rem; }
+        .lp-phone { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; }
+        .lp-hero-grid { align-items: start; }
+        .lp-hero-points { margin-top: 0.2rem; }
+        .lp-form { position: relative; }
+        .lp-form-title { font-size: 1.35rem; margin: 0 0 0.3rem; color: var(--text-primary); font-weight: 800; }
+        .lp-form .btn-submit { width: 100%; }
+        .lp-form-note { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--text-secondary); text-align: center; }
+        .lp-form-note a { text-decoration: underline; }
+        .lp-modules { grid-template-columns: repeat(2, 1fr); }
+        .lp-center { text-align: center; margin-top: 2.2rem; }
+        .lp-trust { background: #f6f9fb; }
+        .lp-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.2rem 2rem; }
+        .lp-logos img { height: 56px; width: auto; max-width: 140px; object-fit: contain; filter: grayscale(30%); }
+        .lp-faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.8rem; }
+        .lp-faq-list details { background: #fff; border: 1px solid rgba(0, 31, 63, 0.1); border-radius: var(--radius-sm); padding: 1rem 1.2rem; }
+        .lp-faq-list summary { cursor: pointer; font-weight: 700; color: var(--text-primary); font-size: 1.05rem; }
+        .lp-faq-list details p { margin: 0.7rem 0 0; color: var(--text-secondary); line-height: 1.7; }
+        .lp-final { text-align: center; max-width: 720px; margin: 0 auto; }
+        .lp-final h2 { font-size: clamp(1.7rem, 3.6vw, 2.45rem); font-weight: 800; line-height: 1.18; color: #fff; margin: 0.8rem 0 1.6rem; }
+        .lp-final-actions { margin-bottom: 1.3rem; }
+        .lp-quick { justify-content: center; }
+        .lp-footer { padding: 1.6rem 0; }
+        .lp-footer .footer-bottom { border-top: 0; padding-top: 0; margin-top: 0; }
+        .lp-footer .footer-bottom p { margin: 0.25rem 0; }
+        @media (max-width: 620px) {
+            .lp-modules { grid-template-columns: 1fr; }
+            .lp-phone span { display: none; }
+            .lp-nav-actions .btn-nav { padding: 0.55rem 0.9rem; font-size: 0.85rem; }
+            .lp-logos img { height: 44px; }
+        }
+    </style>
+</head>
+<body class="es-page lp-page">
+    <a href="#main-content" class="skip-to-content">דלג לתוכן הראשי</a>
+    <div id="blurry-filter" aria-hidden="true"></div>
+
+    <!-- Header: logo + phone + CTA only (landing page, no site navigation) -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav lp-nav" aria-label="ניווט">
+                <a href="../../" class="logo" aria-label="iTeam-sh - לאתר הראשי">
+                    <img src="../../images/iteam-logo.png" alt="iTeam-sh לוגו" class="logo-img">
+                </a>
+                <div class="lp-nav-actions">
+                    <a href="tel:072-2504001" class="nav-phone lp-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span>072-2504001</span></a>
+                    <a href="#lead-form" class="btn btn-nav">לשיחת אבחון חינם</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ============================ HERO + FORM ============================ -->
+        <section class="es-hero" aria-labelledby="lp-hero-title">
+            <canvas id="es-particles" class="es-particles" aria-hidden="true"></canvas>
+            <div class="container">
+                <div class="es-hero-grid lp-hero-grid">
+                    <div class="es-hero-text">
+                        <span class="es-badge">
+                            <span class="es-badge-dot" aria-hidden="true"></span>
+                            תיקון 13 · בתוקף מאוגוסט 2025
+                        </span>
+                        <h1 id="lp-hero-title">מוכנים ל<span class="es-accent">תיקון 13</span>? בדקו איפה העסק עומד, בשיחת אבחון חינם</h1>
+                        <p class="es-lead">
+                            20 דקות עם מומחה אבטחת מידע של iTeam. נעבור יחד על מאגרי המידע, הנהלים והאבטחה בעסק, ובסוף השיחה תדעו מה כבר בסדר, מה חסר ומה הצעד הבא.
+                        </p>
+                        <ul class="es-cta-points lp-hero-points">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> ללא עלות וללא התחייבות</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> שיחה טלפונית או בזום, בזמן שנוח לכם</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> שפה פשוטה, בלי ז'רגון משפטי</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-form-wrapper lp-form" id="lead-form">
+                        <div class="es-form-head">
+                            <h2 class="lp-form-title">קבעו שיחת אבחון חינם</h2>
+                            <p>השאירו פרטים ונחזור אליכם בהקדם, בימים א׳-ה׳.</p>
+                        </div>
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <input type="hidden" name="_replyto" value="info@iteam-sh.co.il">
+                            <input type="hidden" name="_subject" value="ליד מדף נחיתה – שיחת אבחון חינם לתיקון 13">
+                            <input type="hidden" name="מקור" value="דף נחיתה – תיקון 13 (שיחת אבחון חינם)">
+                            <input type="hidden" name="utm" id="lp-utm" value="">
+                            <div class="form-group">
+                                <label for="name">שם מלא *</label>
+                                <input type="text" id="name" name="name" autocomplete="name" required placeholder="הכנס את שמך" aria-describedby="name-error">
+                                <span class="form-error" id="name-error" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">שם החברה *</label>
+                                <input type="text" id="company" name="company" autocomplete="organization" required placeholder="שם העסק שלך" aria-describedby="company-error">
+                                <span class="form-error" id="company-error" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">טלפון *</label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="050-0000000" aria-describedby="phone-error">
+                                <span class="form-error" id="phone-error" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">אימייל *</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required placeholder="your@email.com" aria-describedby="email-error">
+                                <span class="form-error" id="email-error" role="alert"></span>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">כמה עובדים יש בעסק? (לא חובה)</label>
+                                <textarea id="message" name="message" rows="2" placeholder="למשל: 25 עובדים, מאגר לקוחות ב-CRM"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">אני רוצה שיחת אבחון חינם</button>
+                            <p class="lp-form-note">הפרטים משמשים רק לחזרה אליכם. <a href="../../privacy-policy/">מדיניות פרטיות</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ PROBLEM ============================ -->
+        <section class="es-section es-problem" aria-labelledby="lp-problem-title">
+            <div class="container">
+                <div class="es-head es-reveal">
+                    <span class="es-eyebrow">למה עכשיו</span>
+                    <h2 id="lp-problem-title">תיקון 13 כבר באכיפה, ורוב העסקים עדיין לא בדקו את עצמם</h2>
+                    <p>החוק חל כמעט על כל עסק שמחזיק מידע על לקוחות, עובדים או ספקים. הבעיה היא שקשה לדעת מה בדיוק נדרש מכם, ומאיפה מתחילים.</p>
+                </div>
+                <div class="es-split">
+                    <div class="es-feature es-reveal">
+                        <div class="es-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                        <h3>מה הסיכון</h3>
+                        <p>עיצומים כספיים שיכולים להגיע למאות אלפי שקלים, חשיפה לתביעות, ופגיעה באמון של לקוחות שמבקשים לראות שהמידע שלהם מוגן.</p>
+                    </div>
+                    <div class="es-feature es-reveal">
+                        <div class="es-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                        <h3>מה בדרך כלל חסר</h3>
+                        <p>מיפוי של מאגרי המידע, נוהל אבטחת מידע כתוב, הדרכת עובדים, והגנה מפני זליגת מידע במייל, ב-WhatsApp ובמחשבים ניידים.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ WHAT HAPPENS IN THE CALL ============================ -->
+        <section class="es-section es-section--dark es-layers" aria-labelledby="lp-call-title">
+            <div class="container">
+                <div class="es-head es-reveal">
+                    <span class="es-eyebrow">מה קורה בשיחה</span>
+                    <h2 id="lp-call-title">20 דקות, 3 שלבים, תמונת מצב ברורה</h2>
+                    <p>לא שיחת מכירה. שיחת עבודה קצרה שבסופה תדעו איפה אתם עומדים.</p>
+                </div>
+                <div class="es-stack">
+                    <article class="es-layer es-reveal">
+                        <div class="es-layer-num" dir="ltr">01</div>
+                        <div class="es-layer-body">
+                            <h3>היכרות עם העסק</h3>
+                            <p>כמה עובדים, איזה מידע אישי אתם מחזיקים (לקוחות, עובדים, מועמדים, ספקים) ואיפה הוא שמור.</p>
+                        </div>
+                        <div class="es-layer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    </article>
+                    <article class="es-layer es-reveal">
+                        <div class="es-layer-num" dir="ltr">02</div>
+                        <div class="es-layer-body">
+                            <h3>בדיקה מול דרישות החוק</h3>
+                            <p>נעבור על הנקודות המרכזיות: מיפוי מאגרים, רמת אבטחה, נהלים, הדרכות והגנה מפני זליגת מידע.</p>
+                        </div>
+                        <div class="es-layer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    </article>
+                    <article class="es-layer es-reveal">
+                        <div class="es-layer-num" dir="ltr">03</div>
+                        <div class="es-layer-body">
+                            <h3>הצעדים הבאים</h3>
+                            <p>תקבלו תמונה של הפערים העיקריים ומה כדאי לעשות קודם. אם תרצו, נציע תוכנית היערכות מסודרת. אם לא, תצאו עם ידע שאפשר לפעול לפיו.</p>
+                        </div>
+                        <div class="es-layer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ SELF-CHECK ============================ -->
+        <section class="es-section es-platform" aria-labelledby="lp-check-title">
+            <div class="container">
+                <div class="es-head es-reveal">
+                    <span class="es-eyebrow">בדיקה עצמית</span>
+                    <h2 id="lp-check-title">ענו לעצמכם על 4 שאלות</h2>
+                    <p>אם התשובה לאחת מהן היא "לא" או "לא בטוח", שיחת האבחון בשבילכם.</p>
+                </div>
+                <div class="es-modules lp-modules">
+                    <div class="es-module es-reveal">
+                        <span class="es-module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                        <span>האם מיפיתם את מאגרי המידע בעסק והגדרתם לכל אחד רמת אבטחה?</span>
+                    </div>
+                    <div class="es-module es-reveal">
+                        <span class="es-module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                        <span>האם יש לכם נוהל אבטחת מידע כתוב ומעודכן?</span>
+                    </div>
+                    <div class="es-module es-reveal">
+                        <span class="es-module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                        <span>האם העובדים עברו הדרכת אבטחת מידע בשנה האחרונה?</span>
+                    </div>
+                    <div class="es-module es-reveal">
+                        <span class="es-module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                        <span>האם משהו עוצר עובד ששולח קובץ לקוחות למייל פרטי או ל-WhatsApp?</span>
+                    </div>
+                </div>
+                <div class="lp-center es-reveal">
+                    <a href="#lead-form" class="btn btn-primary btn-large">לשיחת אבחון חינם</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ TRUST ============================ -->
+        <section class="es-section lp-trust" aria-labelledby="lp-trust-title">
+            <div class="container">
+                <div class="es-head es-reveal">
+                    <span class="es-eyebrow">מי אנחנו</span>
+                    <h2 id="lp-trust-title">iTeam: מחשוב, ענן ואבטחת מידע לעסקים</h2>
+                    <p>צוות מקצועי ברעננה שמלווה עסקים וארגונים בניהול מערכות המידע, באבטחה ובגיבוי. בין הלקוחות שלנו:</p>
+                </div>
+                <div class="lp-logos es-reveal">
+                    <img loading="lazy" decoding="async" src="../../images/customers/103fm.jpg" alt="103FM">
+                    <img loading="lazy" decoding="async" src="../../images/customers/99fm.jpg" alt="99FM">
+                    <img loading="lazy" decoding="async" src="../../images/customers/hazera1939.png" alt="הזרע">
+                    <img loading="lazy" decoding="async" src="../../images/customers/unitedtours.jpg" alt="United Tours">
+                    <img loading="lazy" decoding="async" src="../../images/customers/hakeren.jpg" alt="הקרן">
+                    <img loading="lazy" decoding="async" src="../../images/customers/zvicohen.jpg" alt="צבי כהן">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ FAQ ============================ -->
+        <section class="es-section lp-faq" aria-labelledby="lp-faq-title">
+            <div class="container">
+                <div class="es-head es-reveal">
+                    <span class="es-eyebrow">שאלות נפוצות</span>
+                    <h2 id="lp-faq-title">לפני שקובעים</h2>
+                </div>
+                <div class="lp-faq-list">
+                    <details class="es-reveal">
+                        <summary>השיחה באמת חינם?</summary>
+                        <p>כן. אין עלות ואין התחייבות. בסוף השיחה תחליטו בעצמכם אם להמשיך.</p>
+                    </details>
+                    <details class="es-reveal">
+                        <summary>תיקון 13 חל גם על עסק קטן?</summary>
+                        <p>ברוב המקרים כן. כמעט כל עסק שמחזיק מידע אישי, כמו רשימת לקוחות, תיקי עובדים או מועמדים, נמצא בתחולת החוק. היקף הדרישות תלוי בכמות המידע וברגישות שלו, ובדיוק את זה בודקים בשיחה.</p>
+                    </details>
+                    <details class="es-reveal">
+                        <summary>מה צריך להכין לשיחה?</summary>
+                        <p>שום דבר מיוחד. מספיק לדעת בערך כמה עובדים יש בעסק ואיפה נשמר המידע על לקוחות ועובדים, למשל CRM, תוכנת הנהלת חשבונות או תיקיות משותפות.</p>
+                    </details>
+                    <details class="es-reveal">
+                        <summary>מה קורה אחרי השיחה?</summary>
+                        <p>אם תרצו, נשלח הצעה לתוכנית היערכות: סקר סיכונים, מיפוי מאגרי מידע, נהלים, הדרכות והגנה מפני זליגת מידע. אם לא, תישארו עם תמונת מצב ברורה.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ FINAL CTA ============================ -->
+        <section class="es-cta" aria-labelledby="lp-cta-title">
+            <div class="container">
+                <div class="lp-final">
+                    <span class="es-eyebrow" style="color: var(--es-teal-2);">20 דקות, בלי עלות</span>
+                    <h2 id="lp-cta-title">בדקו עכשיו איפה העסק עומד מול תיקון 13</h2>
+                    <div class="lp-final-actions">
+                        <a href="#lead-form" class="btn btn-primary btn-large">לשיחת אבחון חינם</a>
+                    </div>
+                    <div class="es-quick lp-quick">
+                        <a href="tel:072-2504001"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 072-2504001</a>
+                        <a href="https://wa.me/972722504001?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%91%D7%97%D7%95%D7%9F%20%D7%97%D7%99%D7%A0%D7%9D%20%D7%9C%D7%AA%D7%99%D7%A7%D7%95%D7%9F%2013" class="is-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.477-.917zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Minimal footer -->
+    <footer class="footer lp-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 אייתים מחשבים וטכנולוגיות מידע · רעננה · <a href="tel:072-2504001">072-2504001</a> · <a href="mailto:info@iteam-sh.co.il">info@iteam-sh.co.il</a></p>
+                <p><a href="../../" class="footer-accessibility-link">לאתר iTeam</a> | <a href="../../services/tikun-13/" class="footer-accessibility-link">על שירות תיקון 13</a> | <a href="../../accessibility.html" class="footer-accessibility-link">הצהרת נגישות</a> | <a href="../../privacy-policy/" class="footer-accessibility-link">מדיניות פרטיות</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky mobile CTA -->
+    <a href="#lead-form" class="es-sticky-cta" aria-hidden="true" tabindex="-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        לשיחת אבחון חינם
+    </a>
+
+    <script src="../../script.js"></script>
+    <script>
+        /* Pass ad campaign parameters (utm_*, fbclid) with the lead so we know which ad brought it. */
+        (function () {
+            try {
+                var p = new URLSearchParams(window.location.search), out = [];
+                ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'fbclid'].forEach(function (k) {
+                    if (p.get(k)) out.push(k + '=' + p.get(k));
+                });
+                var f = document.getElementById('lp-utm');
+                if (f) f.value = out.length ? out.join('&') : 'direct';
+            } catch (e) {}
+        })();
+    </script>
+    <script>
+        (function () {
+            'use strict';
+            var root = document.documentElement;
+            root.classList.add('es-js');
+            var noAnim = root.classList.contains('a11y-no-animations') ||
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            /* ---------- Scroll reveal ---------- */
+            (function () {
+                var els = document.querySelectorAll('.es-reveal');
+                if (noAnim || !('IntersectionObserver' in window)) {
+                    els.forEach(function (el) { el.classList.add('is-visible'); });
+                    return;
+                }
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+                els.forEach(function (el) { io.observe(el); });
+            })();
+
+            /* ---------- Stat count-up ---------- */
+            (function () {
+                var counts = document.querySelectorAll('.es-count');
+                if (!counts.length) return;
+                var run = function (el) {
+                    var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+                    if (noAnim || !('IntersectionObserver' in window)) { el.textContent = target; return; }
+                    var start = null, dur = 1300;
+                    var step = function (ts) {
+                        if (!start) start = ts;
+                        var p = Math.min((ts - start) / dur, 1);
+                        var eased = 1 - Math.pow(1 - p, 3);
+                        el.textContent = Math.round(eased * target);
+                        if (p < 1) requestAnimationFrame(step);
+                    };
+                    requestAnimationFrame(step);
+                };
+                if (noAnim || !('IntersectionObserver' in window)) {
+                    counts.forEach(run);
+                    return;
+                }
+                var seen = false;
+                var band = document.querySelector('.es-stats');
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting && !seen) {
+                            seen = true;
+                            counts.forEach(run);
+                            io.disconnect();
+                        }
+                    });
+                }, { threshold: 0.4 });
+                if (band) io.observe(band);
+            })();
+
+            /* ---------- Live readiness scan ---------- */
+            (function () {
+                var rows = Array.prototype.slice.call(document.querySelectorAll('.es-scan-row'));
+                if (!rows.length) return;
+                var bar = document.querySelector('.es-verdict-bar i');
+                var result = document.querySelector('.es-verdict-result');
+                var statusFor = function (state) {
+                    return state === 'pass' ? '✓ PASS' : state === 'scan' ? '⟳ SCAN' : '· WAIT';
+                };
+                var apply = function (active) {
+                    rows.forEach(function (r, i) {
+                        var state = i < active ? 'pass' : (i === active ? 'scan' : 'wait');
+                        r.classList.remove('is-wait', 'is-scan', 'is-pass');
+                        r.classList.add('is-' + state);
+                        var s = r.querySelector('.es-scan-status');
+                        if (s) s.textContent = statusFor(state);
+                    });
+                    var pct = Math.max(0, Math.min(100, (active / rows.length) * 100));
+                    if (bar) bar.style.width = pct + '%';
+                    if (result) result.classList.toggle('is-clean', active >= rows.length);
+                };
+                if (noAnim) { apply(rows.length); return; }
+                var active = 0;
+                apply(0);
+                setInterval(function () {
+                    active++;
+                    if (active > rows.length + 1) active = 0;
+                    apply(active);
+                }, 620);
+            })();
+
+            /* ---------- Sticky mobile CTA ---------- */
+            (function () {
+                var cta = document.querySelector('.es-sticky-cta');
+                if (!cta) return;
+                var hero = document.querySelector('.es-hero');
+                var form = document.getElementById('lead-form');
+                if (!('IntersectionObserver' in window)) { cta.classList.add('is-visible'); return; }
+                var pastHero = !hero, formVisible = false;
+                var sync = function () { cta.classList.toggle('is-visible', pastHero && !formVisible); };
+                if (hero) {
+                    new IntersectionObserver(function (entries) {
+                        pastHero = !entries[0].isIntersecting;
+                        sync();
+                    }, { threshold: 0 }).observe(hero);
+                }
+                if (form) {
+                    new IntersectionObserver(function (entries) {
+                        formVisible = entries[0].isIntersecting;
+                        sync();
+                    }, { threshold: 0.12 }).observe(form);
+                }
+                sync();
+            })();
+
+            /* ---------- Hero particle network ---------- */
+            (function () {
+                var canvas = document.getElementById('es-particles');
+                if (!canvas || noAnim) return;
+                var ctx = canvas.getContext('2d');
+                var host = canvas.parentElement;
+                var W = 0, H = 0, parts = [], raf = null;
+                var mouse = { x: null, y: null };
+                var size = function () {
+                    W = canvas.width = host.offsetWidth;
+                    H = canvas.height = host.offsetHeight;
+                };
+                var init = function () {
+                    parts = [];
+                    var n = Math.min(56, Math.floor((W * H) / 17000));
+                    for (var i = 0; i < n; i++) {
+                        parts.push({
+                            x: Math.random() * W, y: Math.random() * H,
+                            vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+                            r: Math.random() * 1.6 + 0.6
+                        });
+                    }
+                };
+                var draw = function () {
+                    ctx.clearRect(0, 0, W, H);
+                    var i, j;
+                    for (i = 0; i < parts.length; i++) {
+                        var p = parts[i];
+                        p.x += p.vx; p.y += p.vy;
+                        if (p.x < 0 || p.x > W) p.vx *= -1;
+                        if (p.y < 0 || p.y > H) p.vy *= -1;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(94, 234, 212, 0.5)';
+                        ctx.fill();
+                    }
+                    for (i = 0; i < parts.length; i++) {
+                        for (j = i + 1; j < parts.length; j++) {
+                            var a = parts[i], b = parts[j];
+                            var dx = a.x - b.x, dy = a.y - b.y;
+                            var d = Math.sqrt(dx * dx + dy * dy);
+                            if (d < 130) {
+                                ctx.beginPath();
+                                ctx.strokeStyle = 'rgba(45, 212, 191, ' + (1 - d / 130) * 0.18 + ')';
+                                ctx.lineWidth = 0.7;
+                                ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+                            }
+                        }
+                    }
+                    if (mouse.x !== null) {
+                        for (i = 0; i < parts.length; i++) {
+                            var q = parts[i];
+                            var mx = q.x - mouse.x, my = q.y - mouse.y;
+                            var md = Math.sqrt(mx * mx + my * my);
+                            if (md < 160) {
+                                ctx.beginPath();
+                                ctx.strokeStyle = 'rgba(94, 234, 212, ' + (1 - md / 160) * 0.35 + ')';
+                                ctx.lineWidth = 0.6;
+                                ctx.moveTo(q.x, q.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+                            }
+                        }
+                    }
+                    raf = requestAnimationFrame(draw);
+                };
+                size(); init(); draw();
+                var rt;
+                window.addEventListener('resize', function () {
+                    clearTimeout(rt);
+                    rt = setTimeout(function () { size(); init(); }, 200);
+                });
+                host.addEventListener('mousemove', function (e) {
+                    var rect = canvas.getBoundingClientRect();
+                    mouse.x = e.clientX - rect.left; mouse.y = e.clientY - rect.top;
+                });
+                host.addEventListener('mouseleave', function () { mouse.x = null; mouse.y = null; });
+            })();
+        })();
+    </script>
+    <script src="../../accessibility-widget.js"></script>
+</body>
+</html>
