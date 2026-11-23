@@ -67,7 +67,10 @@
             '.iteam-cc__btn--decline{background:transparent;color:#001F3F;border-color:rgba(0,31,63,0.25);}',
             '.iteam-cc__btn--decline:hover{background:rgba(0,31,63,0.05);border-color:rgba(0,31,63,0.45);}',
             '.iteam-cc__btn:focus-visible{outline:2px solid #0D9488;outline-offset:2px;}',
-            '@media (max-width:600px){.iteam-cc{right:12px;left:12px;bottom:12px;width:auto;max-width:none;}}',
+            // Phones: a compact banner, so it covers less of the page (e.g. the landing-page form).
+            '@media (max-width:600px){.iteam-cc{right:12px;left:12px;bottom:12px;width:auto;max-width:none;padding:14px 16px;}',
+            '.iteam-cc__title{font-size:15px;margin-bottom:4px;}.iteam-cc__desc{font-size:13px;line-height:1.5;margin:0 0 10px;}',
+            '.iteam-cc__btn{padding:9px 12px;}}',
             '@media (prefers-reduced-motion:reduce){.iteam-cc{transition:none;}}'
         ].join('');
         var style = document.createElement('style');

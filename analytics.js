@@ -90,13 +90,42 @@
         // Scope it explicitly to GA4 so it is not routed to the Ads destination
         // alongside the dedicated conversion event above.
         gtag('event', 'generate_lead', { send_to: GA_MEASUREMENT_ID });
+        // Meta: one event id shared by the browser pixel and the server report
+        // below, so Meta counts the lead once even when both arrive.
+        var metaEventId = 'lead-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
         // Meta Pixel: count the submission as a Lead only while Meta consent is
         // active. Using the consent-aware wrapper prevents a pre-consent event
         // from sitting in fbq's queue and being replayed after a later opt-in.
         if (window.iteamMetaPixel && typeof window.iteamMetaPixel.track === 'function') {
-            window.iteamMetaPixel.track('Lead');
+            window.iteamMetaPixel.track('Lead', {}, { eventID: metaEventId });
         }
+        // Meta Conversions API (server side, /api/meta-lead): visitors from a
+        // Meta ad often never answer the cookie banner, so the pixel above
+        // misses their lead. For ad visitors only (fbclid in the URL), tell our
+        // own server, which reports "a lead came from this ad click" to Meta.
+        // No cookies; no name/email/phone — only the ad's click id and the
+        // browser type. See api/src/meta-capi.js and the privacy policy.
+        sendMetaServerLead(metaEventId);
     };
+
+    var PAGE_LOADED_AT = Date.now(); // ≈ when the visitor landed from the ad
+    function sendMetaServerLead(eventId) {
+        try {
+            var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+            if (!fbclid || !window.fetch) return;
+            fetch('/api/meta-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    fbclid: fbclid,
+                    eventId: eventId,
+                    url: window.location.href,
+                    clickTime: PAGE_LOADED_AT
+                }),
+                keepalive: true
+            }).catch(function () {});
+        } catch (e) {}
+    }
 
     // --- Load the cookie-consent banner UI ---
     var ccScript = document.createElement('script');

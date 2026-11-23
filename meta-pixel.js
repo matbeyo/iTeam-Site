@@ -94,9 +94,12 @@
     window.iteamMetaPixel = {
         grant: activate,
         revoke: deactivate,
-        track: function (eventName, params) {
+        // options: e.g. { eventID: '…' } so Meta can de-duplicate against the
+        // same event reported server-side (Conversions API).
+        track: function (eventName, params, options) {
             if (active && typeof window.fbq === 'function') {
-                window.fbq('track', eventName, params);
+                if (options) window.fbq('track', eventName, params || {}, options);
+                else window.fbq('track', eventName, params);
             }
         }
     };
