@@ -15,8 +15,8 @@
     </script>
 
     <!-- Landing page for paid campaigns: kept out of search results (the indexed page is /services/it-management-support/) -->
-    <title>תמיכה וניהול IT לעסקים – שיחת ייעוץ חינם | iTeam-sh</title>
-    <meta name="description" content="תמיכת מחשוב, תחזוקה וניטור לעסקים, עם צוות שעונה. שיחת ייעוץ חינם של 20 דקות: נבין איך ה-IT בעסק עובד היום ומה אפשר לשפר.">
+    <title>תמיכה וניהול IT לעסקים – בדיקת מצב IT חינם | iTeam-sh</title>
+    <meta name="description" content="תמיכת מחשוב, תחזוקה וניטור לעסקים, עם צוות שעונה. בדיקת מצב IT חינם: שיחה של 20 דקות, ובסופה רשימה של נקודות לשיפור במחשוב של העסק.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://iteam-sh.co.il/services/it-management-support/">
 
@@ -24,7 +24,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://iteam-sh.co.il/lp/it-support/">
     <meta property="og:title" content="תמיכת IT לעסקים, עם צוות שעונה | iTeam-sh">
-    <meta property="og:description" content="Help Desk, תחזוקה שוטפת וניטור מערכות במקום אחד. שיחת ייעוץ חינם של 20 דקות.">
+    <meta property="og:description" content="Help Desk, תחזוקה שוטפת וניטור מערכות במקום אחד. בדיקת מצב IT חינם, עם רשימה של נקודות לשיפור.">
     <meta property="og:locale" content="he_IL">
     <meta property="og:site_name" content="iTeam-sh">
     <meta property="og:image" content="https://iteam-sh.co.il/images/og-default.png">
@@ -558,6 +558,11 @@
         .lp-form .btn-submit { width: 100%; }
         .lp-form-note { margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--text-secondary); text-align: center; }
         .lp-form-note a { text-decoration: underline; }
+        .lp-form-note, .lp-form-alt { grid-column: 1 / -1; }
+        .lp-form-alt { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem 1rem; margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border-light, rgba(0,31,63,0.1)); font-size: 0.92rem; color: var(--text-secondary); }
+        .lp-form-alt a { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; color: var(--primary-color); }
+        .lp-form-alt a svg { width: 15px; height: 15px; }
+        .lp-form-alt a.is-wa { color: #128c4a; }
         .lp-modules { grid-template-columns: repeat(2, 1fr); }
         .lp-center { text-align: center; margin-top: 2.2rem; }
         .lp-trust { background: #f6f9fb; }
@@ -595,7 +600,7 @@
                 </a>
                 <div class="lp-nav-actions">
                     <a href="tel:072-2504001" class="nav-phone lp-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span>072-2504001</span></a>
-                    <a href="#lead-form" class="btn btn-nav">לשיחת ייעוץ חינם</a>
+                    <a href="#lead-form" class="btn btn-nav">לבדיקת מצב IT חינם</a>
                 </div>
             </nav>
         </div>
@@ -626,13 +631,13 @@
 
                     <div class="contact-form-wrapper lp-form" id="lead-form">
                         <div class="es-form-head">
-                            <h2 class="lp-form-title">קבעו שיחת ייעוץ חינם</h2>
-                            <p>20 דקות על ה-IT בעסק שלכם. השאירו פרטים ונחזור אליכם בהקדם, בימים א׳-ה׳.</p>
+                            <h2 class="lp-form-title">קבעו בדיקת מצב IT חינם</h2>
+                            <p>שיחה של 20 דקות עם מומחה IT, ובסופה תקבלו רשימה של נקודות לשיפור במחשוב של העסק. השאירו פרטים ונחזור אליכם בימים א׳-ה׳.</p>
                         </div>
                         <form class="contact-form" id="contactForm" novalidate>
                             <input type="hidden" name="_replyto" value="info@iteam-sh.co.il">
                             <input type="hidden" name="_subject" value="ליד מדף נחיתה – תמיכה וניהול IT">
-                            <input type="hidden" name="מקור" value="דף נחיתה – תמיכה וניהול IT (שיחת ייעוץ חינם)">
+                            <input type="hidden" name="מקור" value="דף נחיתה – תמיכה וניהול IT (בדיקת מצב IT חינם)">
                             <input type="hidden" name="utm" id="lp-utm" value="">
                             <div class="form-group">
                                 <label for="name">שם מלא *</label>
@@ -658,8 +663,13 @@
                                 <label for="message">כמה עמדות מחשב יש בעסק? (לא חובה)</label>
                                 <textarea id="message" name="message" rows="2" placeholder="למשל: 20 עמדות, שרת אחד, Microsoft 365"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-submit">אני רוצה שיחת ייעוץ חינם</button>
+                            <button type="submit" class="btn btn-primary btn-submit">אני רוצה בדיקת מצב חינם</button>
                             <p class="lp-form-note">הפרטים משמשים רק לחזרה אליכם. <a href="../../privacy-policy/">מדיניות פרטיות</a></p>
+                            <div class="lp-form-alt">
+                                <span>מעדיפים לדבר עכשיו?</span>
+                                <a href="tel:072-2504001"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 072-2504001</a>
+                                <a href="https://wa.me/972722504001?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%9E%D7%A6%D7%91%20IT%20%D7%97%D7%99%D7%A0%D7%9D" class="is-wa" target="_blank" rel="noopener">WhatsApp</a>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -693,6 +703,9 @@
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> כל קריאה מתועדת, עם מעקב אחרי סטטוס הטיפול</li>
                         </ul>
                     </div>
+                </div>
+                <div class="lp-center es-reveal">
+                    <a href="#lead-form" class="btn btn-primary btn-large">לבדיקת מצב IT חינם</a>
                 </div>
             </div>
         </section>
@@ -761,7 +774,7 @@
                     </div>
                 </div>
                 <div class="lp-center es-reveal">
-                    <a href="#lead-form" class="btn btn-primary btn-large">לשיחת ייעוץ חינם</a>
+                    <a href="#lead-form" class="btn btn-primary btn-large">לבדיקת מצב IT חינם</a>
                 </div>
             </div>
         </section>
@@ -820,11 +833,11 @@
                     <span class="es-eyebrow" style="color: var(--es-teal-2);">20 דקות, בלי עלות</span>
                     <h2 id="lp-cta-title">בואו נדבר על ה-IT בעסק שלכם</h2>
                     <div class="lp-final-actions">
-                        <a href="#lead-form" class="btn btn-primary btn-large">לשיחת ייעוץ חינם</a>
+                        <a href="#lead-form" class="btn btn-primary btn-large">לבדיקת מצב IT חינם</a>
                     </div>
                     <div class="es-quick lp-quick">
                         <a href="tel:072-2504001"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 072-2504001</a>
-                        <a href="https://wa.me/972722504001?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%A2%D7%9C%20%D7%AA%D7%9E%D7%99%D7%9B%D7%AA%20IT" class="is-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.890-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.477-.917zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
+                        <a href="https://wa.me/972722504001?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%9E%D7%A6%D7%91%20IT%20%D7%97%D7%99%D7%A0%D7%9D" class="is-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.890-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.477-.917zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -845,7 +858,7 @@
     <!-- Sticky mobile CTA -->
     <a href="#lead-form" class="es-sticky-cta" aria-hidden="true" tabindex="-1">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        לשיחת ייעוץ חינם
+        לבדיקת מצב IT חינם
     </a>
 
     <script src="../../script.js"></script>
