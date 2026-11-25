@@ -15,7 +15,7 @@
  *   META_GRAPH_VERSION    optional, e.g. "v23.0".
  *
  * Always answers 202/204 to the browser — a Meta failure must never affect
- * the visitor, and the lead itself is already in Sales@ via Formspree.
+ * the visitor, and the lead itself is already in marketing@ via Formspree.
  */
 'use strict';
 
